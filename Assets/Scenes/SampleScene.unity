@@ -1384,7 +1384,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   saveFile: {fileID: 978851077}
   volSlider: {fileID: 1787404148}
-  volumeSprite: {fileID: 828312005}
+  volumeImage: {fileID: 828312005}
+  lowVol: {fileID: -4559901287519599889, guid: 4f01116e86ee7d14ba1e523ab32170e0, type: 3}
+  midVol: {fileID: -6552628532503788782, guid: 4f01116e86ee7d14ba1e523ab32170e0, type: 3}
+  highVol: {fileID: 6062745774386070325, guid: 4f01116e86ee7d14ba1e523ab32170e0, type: 3}
   masterVolume: 0
   isMute: 0
 --- !u!1 &271852081

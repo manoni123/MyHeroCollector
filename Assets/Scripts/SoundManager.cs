@@ -12,7 +12,8 @@ public class SoundManager : MonoBehaviour
     static AudioClip audioClip;
     public SaveFile saveFile;
     public Slider volSlider;
-    public Image volumeSprite;
+    public Image volumeImage; 
+    public Sprite lowVol, midVol, highVol;
     public float masterVolume;
     public bool isMute;
 
@@ -64,7 +65,14 @@ public class SoundManager : MonoBehaviour
         float vol = audioSrc.volume;
         if (vol <= 0.3f)
         {
-
+            volumeImage.sprite = lowVol;
+        }else if ( vol <= 0.65f && vol > 0.30f)
+        {
+            volumeImage.sprite = midVol;
+        }
+        else
+        {
+            volumeImage.sprite = highVol;
         }
     }
 
