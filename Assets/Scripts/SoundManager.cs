@@ -1,5 +1,6 @@
 ﻿using UnityEngine;
 using System.Collections;
+using UnityEngine.UI;
 
 public class SoundManager : MonoBehaviour
 {
@@ -9,6 +10,11 @@ public class SoundManager : MonoBehaviour
         menu, introTheme, homeTheme, adventureTheme, battle, bossBattle, goodNight;
     static AudioSource audioSrc;
     static AudioClip audioClip;
+    public SaveFile saveFile;
+    public Slider volSlider;
+    public Image volumeSprite;
+    public float masterVolume;
+    public bool isMute;
 
 
     private void Awake()
@@ -47,15 +53,25 @@ public class SoundManager : MonoBehaviour
         goodNight = Resources.Load<AudioClip>("Audio/Goodnight");
         audioSrc = GetComponent<AudioSource>();
 
-        Debug.Log("audio src comes first");
+        audioSrc.volume = masterVolume;
+        volSlider.value = masterVolume;
 
         PlaySound("Intro");
-
     }
 
-    public static void SetVolume(float volume)
+    private void Update()
     {
-        audioSrc.volume = volume;
+        float vol = audioSrc.volume;
+        if (vol <= 0.3f)
+        {
+
+        }
+    }
+
+    public void SetVolume()
+    {
+        masterVolume = volSlider.value;
+        audioSrc.volume = masterVolume;
     }
 
     public static void PlaySound(string clip)
@@ -102,7 +118,6 @@ public class SoundManager : MonoBehaviour
             case "Home":
                 audioSrc.Stop();
                 audioSrc.PlayOneShot(homeTheme);
-                SetVolume(1f);
                 break;
             case "Adventure1":
                 audioSrc.Stop();

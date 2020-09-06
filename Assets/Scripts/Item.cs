@@ -7,6 +7,7 @@ public class Item : MonoBehaviour
 {
     public bool canShow;
     public int itemID;
+    public float dropChance;
     public Player player;
     public Image silhouetteImage;
     void Start()
@@ -22,19 +23,9 @@ public class Item : MonoBehaviour
 
     public void ShowUnlockedItems()
     {
-        if (player.chestCount >= 1)
+        if (player.CollectionItemsId.Contains(itemID))
         {
-            if (itemID == 1)
-            {
-                silhouetteImage.enabled = false;
-            }
-        }
-        if (player.chestCount >= 3)
-        {
-            if (itemID == 3)
-            {
-                silhouetteImage.enabled = false;
-            }
+            silhouetteImage.enabled = false;
         }
     }
 }

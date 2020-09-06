@@ -1,16 +1,20 @@
 ﻿using UnityEngine;
 using System.Collections;
 using UnityEngine.UI;
-
+using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     public float level, score, scoreToNextLevel;
     public int chestCount;
     public float skillTimer;
+    public float lastRandomNumber = 0.01f;
     public bool skillReady, allowReset = false;
     public Text scoreText;
     public Image scoreImage, skillCooldownImage;
     public Chest chest;
+
+    [Header("Collection List")]
+    public List<int> CollectionItemsId = new List<int>();
 
     // Use this for initialization
     void Start()

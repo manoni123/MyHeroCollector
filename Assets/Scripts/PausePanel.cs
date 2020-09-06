@@ -1,11 +1,13 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
 {
     private bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown;
     public GameObject collectionWindow, settingWindow, shopWindow, leaderboardWindow, abilityWindow;
+    public SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
     {
