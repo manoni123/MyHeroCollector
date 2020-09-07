@@ -8,11 +8,12 @@ public class MonsterManager : MonoBehaviour
     Chest chest;
     SaveFile saveFile;
     public LootTable lootTable;
-    public int monsterId;
+    public int monsterId, monsterLevel;
     public float monsterHealth;
     public int healthRegen;
     public int chestId;
     public float dropChance;
+    public int goldDrop;
     public bool isSpawn = false;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
     private void Start()
@@ -27,6 +28,7 @@ public class MonsterManager : MonoBehaviour
         //show player score / next monster hp
         player.scoreText.text = player.score.ToString() + " / " + monsterHealth.ToString();
 
+        //bite off players score every some time
         if (player.score >= player.scoreToNextLevel && isSpawn)
         {
             Death();
@@ -39,9 +41,15 @@ public class MonsterManager : MonoBehaviour
             chest.GetComponent<Chest>().ChestOpen();
             MakeLoot();
             player.chestCount++;
+            GoldDropped();
             Destroy(gameObject);
             player.score = 0;
         }
+    }
+    void GoldDropped()
+    {
+        int sum = (monsterLevel * goldDrop) + (player.level * 2);
+        player.gold += sum;
     }
 
     private void MakeLoot()
