@@ -19,10 +19,43 @@ public class AbilitiesManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int physicalTotal = player.attack + skillOne() + skillTwo();
+        int specialTotal = player.specialAttack + skillThree();
         playerLevelText.text = "Player Level : " + player.level.ToString();
-        normalAttackText.text = "Physical Attack : " + player.attack.ToString();
-        specialAttackText.text = "Special Attack : "+ player.specialAttack.ToString();
+        normalAttackText.text = "Physical Attack : " + physicalTotal.ToString();
+        specialAttackText.text = "Special Attack : "+ specialTotal.ToString();
         cooldownDecreaseText.text = "Cooldown Decrease : " + player.cooldownDecrease.ToString();
         DoubleStrikeText.text = "Double Strike Chance : " + player.doubleStrike.ToString();
     }
+
+    public int skillOne()
+    {
+        if (player.SkillItemsId.Contains(1))
+        {
+            int skillDamage = 10;
+            return skillDamage;
+        }
+        return 0;
+    }
+
+    public int skillTwo()
+    {
+        if (player.SkillItemsId.Contains(2))
+        {
+            int skillDamage = 10;
+            return skillDamage;
+        }
+        return 0;
+    }
+    public int skillThree()
+    {
+        if (player.SkillItemsId.Contains(3))
+        {
+            int skillDamage = 10;
+            return skillDamage;
+        }
+        return 0;
+    }
+
+
 }

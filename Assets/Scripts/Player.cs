@@ -12,6 +12,7 @@ public class Player : MonoBehaviour
     public Text scoreText, goldText, diamondText;
     public Image scoreImage, skillCooldownImage;
     public Chest chest;
+    public AbilitiesManager abilitiesManager;
 
     [Header("Collection List")]
     public List<int> CollectionItemsId = new List<int>();
@@ -22,6 +23,9 @@ public class Player : MonoBehaviour
     // Use this for initialization
     void Start()
     {
+        attack = 1;
+        specialAttack = 5;
+
         skillReady = true;
         chest = FindObjectOfType<Chest>();
     }
@@ -56,14 +60,16 @@ public class Player : MonoBehaviour
 
     public void increaseScoreByWeapon()
     {
-        score = score + attack;        
+        int totalDamage = attack + abilitiesManager.skillOne() + abilitiesManager.skillTwo();
+        score += totalDamage;
     }
     public void increaseScoreBySkill()
     {
+        int totalDamage = specialAttack + abilitiesManager.skillThree();
         if (skillReady)
         {
             skillCooldownImage.fillAmount = 1f;
-            score = score + specialAttack;
+            score +=  totalDamage;
             skillReady = false;
             StartCoroutine("skillCooldown");
         }
