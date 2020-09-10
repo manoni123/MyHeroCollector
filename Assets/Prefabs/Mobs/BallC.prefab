@@ -114,13 +114,13 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: 5239ca7df6c64254993b4523cc4acbcd, type: 2}
-  monsterId: 3
+  monsterId: 7
   monsterLevel: 1
-  monsterHealth: 50
+  monsterHealth: 70
   healthRegen: 5
   chestId: 2
   dropChance: 0
-  goldDrop: 15
+  goldDrop: 23
   isSpawn: 0
   Effects:
   - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}

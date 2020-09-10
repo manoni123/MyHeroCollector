@@ -14,7 +14,7 @@ public class MonsterManager : MonoBehaviour
     public int chestId;
     public float dropChance;
     public int goldDrop;
-    public bool isSpawn = false;
+    public bool isSpawn = false, isBoss;
     public GameObject[] Effects;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
     private void Start()
@@ -23,11 +23,27 @@ public class MonsterManager : MonoBehaviour
         chest = GameObject.Find("PlayerUI").GetComponent<Chest>();
         saveFile = FindObjectOfType<SaveFile>();
         player.scoreToNextLevel = monsterHealth;
+
+        if (isBoss)
+        {
+            player.scoreImage.color = Color.red;
+        }
+        else if (!isBoss)
+        {
+            player.scoreImage.color = new Color(69f/255f,130f/255f,179f/255f);
+        }
     }
     void Update()
     {
         //show player score / next monster hp
-        player.scoreText.text = player.score.ToString() + " / " + monsterHealth.ToString();
+        if (isBoss)
+        {
+            player.scoreText.text ="Boss!     " + player.score.ToString() + " / " + monsterHealth.ToString();
+        }
+        else
+        {
+            player.scoreText.text = player.score.ToString() + " / " + monsterHealth.ToString();
+        }
 
         MonsterEffects();
 
@@ -36,7 +52,6 @@ public class MonsterManager : MonoBehaviour
         {
             Death();
         }
-
     }
 
     void MonsterEffects()

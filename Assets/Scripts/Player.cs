@@ -24,7 +24,7 @@ public class Player : MonoBehaviour
     void Start()
     {
         attack = 1;
-        specialAttack = 5;
+        specialAttack = 50;
 
         skillReady = true;
         chest = FindObjectOfType<Chest>();
