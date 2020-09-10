@@ -6,7 +6,7 @@ public class SoundManager : MonoBehaviour
 {
 
     public static AudioClip playerHit, fireSound, coinPickup, diamondPickup, foodPickup, fireExplosion, swordSwing, silence, thunder,
-        click, clickEcho, rockSlide, levelUp,
+        click, clickEcho, rockSlide, levelUp, arrow,
         menu, introTheme, homeTheme, adventureTheme, battle, bossBattle, goodNight;
     static AudioSource audioSrc;
     static AudioClip audioClip;
@@ -39,6 +39,7 @@ public class SoundManager : MonoBehaviour
         diamondPickup = Resources.Load<AudioClip>("Audio/DiamondPick");
         fireExplosion = Resources.Load<AudioClip>("Audio/FireExplosion");
         swordSwing = Resources.Load<AudioClip>("Audio/SwordSwing");
+        arrow = Resources.Load<AudioClip>("Audio/Arrow");
         thunder = Resources.Load<AudioClip>("Audio/Thunder");
         silence = Resources.Load<AudioClip>("Audio/Silence");
         click = Resources.Load<AudioClip>("Audio/click");
@@ -97,6 +98,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "SwordSwing":
                 audioSrc.PlayOneShot(swordSwing);
+                break;
+            case "Arrow":
+                audioSrc.PlayOneShot(arrow);
                 break;
             case "Silence":
                 audioSrc.PlayOneShot(silence);

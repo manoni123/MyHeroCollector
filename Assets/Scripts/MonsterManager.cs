@@ -15,6 +15,7 @@ public class MonsterManager : MonoBehaviour
     public float dropChance;
     public int goldDrop;
     public bool isSpawn = false;
+    public GameObject[] Effects;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
     private void Start()
     {
@@ -28,10 +29,27 @@ public class MonsterManager : MonoBehaviour
         //show player score / next monster hp
         player.scoreText.text = player.score.ToString() + " / " + monsterHealth.ToString();
 
+        MonsterEffects();
+
         //bite off players score every some time
         if (player.score >= player.scoreToNextLevel && isSpawn)
         {
             Death();
+        }
+
+    }
+
+    void MonsterEffects()
+    {
+        if (player.normalAttackEffect)
+        {
+            Instantiate(Effects[0], transform.position, Quaternion.identity);
+            player.normalAttackEffect = false;
+        }
+        if (player.specialAttackEffect)
+        {
+            Instantiate(Effects[1], transform.position, Quaternion.identity);
+            player.specialAttackEffect = false;
         }
     }
 

@@ -123,3 +123,6 @@ MonoBehaviour:
   dropChance: 0
   goldDrop: 20
   isSpawn: 0
+  Effects:
+  - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
+  - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}

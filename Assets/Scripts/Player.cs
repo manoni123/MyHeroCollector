@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int chestCount, level, attack, specialAttack, gold, diamond;
     public float skillTimer, cooldownDecrease, doubleStrike;
     public float lastRandomNumber = 0.01f;
-    public bool skillReady, allowReset = false;
+    public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect;
     public Text scoreText, goldText, diamondText;
     public Image scoreImage, skillCooldownImage;
     public Chest chest;
@@ -62,6 +62,7 @@ public class Player : MonoBehaviour
     {
         int totalDamage = attack + abilitiesManager.skillOne() + abilitiesManager.skillTwo();
         score += totalDamage;
+        normalAttackEffect = true;
     }
     public void increaseScoreBySkill()
     {
@@ -71,6 +72,7 @@ public class Player : MonoBehaviour
             skillCooldownImage.fillAmount = 1f;
             score +=  totalDamage;
             skillReady = false;
+            specialAttackEffect = true;
             StartCoroutine("skillCooldown");
         }
     }
