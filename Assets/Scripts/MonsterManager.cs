@@ -10,19 +10,25 @@ public class MonsterManager : MonoBehaviour
     public LootTable lootTable;
     public int monsterId, monsterLevel;
     public float monsterHealth;
-    public int healthRegen;
+    public int monsterDamage;
+    public float monsterDamageCooldown;
     public int chestId;
-    public float dropChance;
     public int goldDrop;
     public bool isSpawn = false, isBoss;
     public GameObject[] Effects;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
+    /// <summary>Effects explain
+    /// #0 = damage by normal attack
+    /// #1 = damage by skill
+    /// #2 = attack player w/ projectile
+    /// </summary>
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         chest = GameObject.Find("PlayerUI").GetComponent<Chest>();
         saveFile = FindObjectOfType<SaveFile>();
         player.scoreToNextLevel = monsterHealth;
+        InvokeRepeating("DamagePlayer", 2f, monsterDamageCooldown);
 
         if (isBoss)
         {
@@ -54,8 +60,17 @@ public class MonsterManager : MonoBehaviour
         }
     }
 
+    void DamagePlayer()
+    {
+        //hit player every X seconds with invoke
+        Vector3 shootingPos = new Vector3(0.0f, -1.0f);
+        Instantiate(Effects[2], transform.position + shootingPos, Quaternion.identity);
+        player.score -= monsterDamage;
+    }
+
     void MonsterEffects()
     {
+        //all effect casued on mob will start here
         if (player.normalAttackEffect)
         {
             Instantiate(Effects[0], transform.position, Quaternion.identity);
@@ -77,6 +92,7 @@ public class MonsterManager : MonoBehaviour
             GoldDropped();
             Destroy(gameObject);
             player.score = 0;
+            CancelInvoke("DamagePlayer");
         }
     }
     void GoldDropped()

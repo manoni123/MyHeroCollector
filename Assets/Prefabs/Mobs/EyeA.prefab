@@ -118,15 +118,16 @@ MonoBehaviour:
   monsterId: 13
   monsterLevel: 0
   monsterHealth: 0
-  healthRegen: 0
+  monsterDamage: 1
+  monsterDamageCooldown: 4
   chestId: 0
-  dropChance: 0
   goldDrop: 0
   isSpawn: 0
+  isBoss: 0
   Effects:
   - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
   - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}
-  - {fileID: 0}
+  - {fileID: 6453928940616949626, guid: 8250328ed70b47c43a990a44898a9be2, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
