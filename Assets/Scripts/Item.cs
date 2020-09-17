@@ -10,12 +10,7 @@ public class Item : MonoBehaviour
     public float dropChance;
     public Player player;
     public Image silhouetteImage;
-    void Start()
-    {
-        
-    }
 
-    // Update is called once per frame
     void Update()
     {
         ShowUnlockedItems();

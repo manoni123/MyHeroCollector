@@ -10,10 +10,9 @@ public class Chest : MonoBehaviour
     float currCountdownValue;
     float timeLeft = 2.0f;
 
-    public void ChestOpen()
+    public void MainTextDisplay(string text)
     {
-        chestText.text = "You Win Chest, You got new item!";
-        player.lastRandomNumber = calculateDropChance();
+        chestText.text = text;
         StartCoroutine(StartCountdown());
     }
 

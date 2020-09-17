@@ -1,0 +1,39 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd280edfec1a5b4e8a1e865236dbec3, type: 3}
+  m_Name: Common_2
+  m_EditorClassIdentifier: 
+  loots:
+  - thisloot: {fileID: 7861481540186342427, guid: aea71ea498e3069429003287f01912ee,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 6435482831504182200, guid: aad5c62238bb64f49a02d6f2ee71c42e,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 1491262196418572066, guid: 35f6e150d6b4a584e947f59b88d2a3a0,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 1186477174767320296, guid: e2ed4cc00d3648c4e82479e8ee283ff3,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 8790644760066721258, guid: 4be9dccd798268d4d8bdc9563a008077,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 8276442520787271470, guid: 4a7eb9c8d006b49458e7d0f9209575a5,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 2512537773013786117, guid: f4f9f117479534c4388ac2fcdbe84d6b,
+      type: 3}
+    lootChance: 12.5
+  - thisloot: {fileID: 4641280225048854858, guid: 19d8da0bb3e020640a5e8895d81ccf24,
+      type: 3}
+    lootChance: 12.5

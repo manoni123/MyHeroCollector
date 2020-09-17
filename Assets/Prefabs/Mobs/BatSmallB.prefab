@@ -114,9 +114,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 15c0e0d9fa2e9bc4fb6a6c78a2eb1689, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 0}
+  lootTable: {fileID: 11400000, guid: 5239ca7df6c64254993b4523cc4acbcd, type: 2}
   monsterId: 2
-  monsterLevel: 0
+  monsterLevel: 2
   monsterHealth: 20
   monsterDamage: 1
   monsterDamageCooldown: 4

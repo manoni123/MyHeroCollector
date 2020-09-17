@@ -48,7 +48,7 @@ public class MonsterManager : MonoBehaviour
         }
         else
         {
-            player.scoreText.text = player.score.ToString() + " / " + monsterHealth.ToString();
+            player.scoreText.text = "Lv. " + monsterLevel + "       " + player.score.ToString() + " / " + monsterHealth.ToString();
         }
 
         MonsterEffects();
@@ -65,7 +65,7 @@ public class MonsterManager : MonoBehaviour
         //hit player every X seconds with invoke
         Vector3 shootingPos = new Vector3(0.0f, -1.0f);
         Instantiate(Effects[2], transform.position + shootingPos, Quaternion.identity);
-        player.score -= monsterDamage;
+        player.score -= monsterLevel;
     }
 
     void MonsterEffects()
@@ -86,13 +86,14 @@ public class MonsterManager : MonoBehaviour
     void Death()
     {
         {
-            chest.GetComponent<Chest>().ChestOpen();
-            MakeLoot();
+         //   chest.GetComponent<Chest>().MainTextDisplay();
+            CancelInvoke("DamagePlayer");
             player.chestCount++;
+            MakeLoot();
             GoldDropped();
             Destroy(gameObject);
             player.score = 0;
-            CancelInvoke("DamagePlayer");
+            player.level++;
         }
     }
     void GoldDropped()
@@ -103,17 +104,14 @@ public class MonsterManager : MonoBehaviour
 
     private void MakeLoot()
     {
-        Debug.Log("Loot function");
-
         if (lootTable != null)
         {
             GameObject current = lootTable.LootObject();
             if (current != null)
             {
                 Debug.Log("should be dropped somthing");
-                //instantiate an object and animate it towrds the same position + a fixed amount of random range from current transform
                 Instantiate(current.gameObject, transform.position + objectSpawn, Quaternion.identity) ;
-                chest.chestText.text = "You got big drop buddy!";
+                chest.MainTextDisplay("You Found A : " + current.gameObject.name);
             }
         }
     }
