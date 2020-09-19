@@ -2,8 +2,6 @@
 using System.Collections;
 using TigerForge;
 using System.Collections.Generic;
-using System.IO;
-using UnityEngine.UI;
 
 public class SaveFile : MonoBehaviour
 {
@@ -21,6 +19,7 @@ public class SaveFile : MonoBehaviour
             player.level = myFile.GetInt("PlayerLevel");
             player.gold = myFile.GetInt("PlayerGold");
             player.diamond = myFile.GetInt("PlayerDiamond");
+            player.skipForward = myFile.GetInt("PlayerSkipForward");
             soundManager.masterVolume = myFile.GetFloat("Volume");
             soundManager.isMute = myFile.GetBool("VolumeSprite");
             player.CollectionItemsId = myFile.GetList<int>("PlayerCollection");
@@ -43,6 +42,7 @@ public class SaveFile : MonoBehaviour
         myFile.Add("PlayerLevel", player.level);
         myFile.Add("PlayerGold", player.gold);
         myFile.Add("PlayerDiamond", player.diamond);
+        myFile.Add("PlayerSkipForward", player.skipForward);
         myFile.Add("Volume", soundManager.masterVolume);
         myFile.Add("VolumeSprite", soundManager.isMute);
         for (int i = 0; i < player.CollectionItemsId.Count; i++)

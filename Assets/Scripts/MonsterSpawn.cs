@@ -7,9 +7,9 @@ using UnityEngine.UI;
 public class MonsterSpawn : MonoBehaviour
 {
     Chest chest;
-    public int mobCounter, skipPayment;
-    public bool allowSpawn, fightStart = false;
-    public Button[] guiButton;
+    public int mobCounter, skipPayment, skipCount;
+    public bool allowSpawn, fightStart = false, skipCountIncrease = false;
+    public GameObject[] guiButton;
     public Player player;
     public GameObject[] mobs;
 
@@ -45,34 +45,47 @@ public class MonsterSpawn : MonoBehaviour
                 }
             }
         }
+        if (player.SkillItemsId.Contains(11))
+        {
+            if (!skipCountIncrease)
+            {
+                skipCount += player.abilitiesManager.JumpStart();
+                skipCountIncrease = true;
+            }
+        }
+
+        guiButton[3].gameObject.GetComponentInChildren<Text>().text = skipCount.ToString(); //skip number can be updated by skill
     }
 
     public void SkipMobs(GameObject Spawner)
     {
-        if (player.gold >= skipPayment)
+        if (skipCount >= 5)
         {
-            int remainingCount = mobs.Length - mobCounter;
-            if (remainingCount > 10)
+            if (player.gold >= skipPayment)
             {
-                Destroy(Spawner.transform.GetChild(0).gameObject);
-                GameObject nextMob = Instantiate(mobs[mobCounter + 10], transform.position, Quaternion.identity);
-                nextMob.name = "currrentEnemy_" + mobCounter;
-                nextMob.transform.SetParent(Spawner.transform);
-                allowSpawn = false;
-                nextMob.GetComponent<MonsterManager>().isSpawn = true;
-                mobCounter += 10;
-                player.score = 0;
-                player.gold -= skipPayment;
-                SoundManager.PlaySound("LevelUp");
+                int remainingCount = mobs.Length - mobCounter;
+                if (remainingCount > skipCount)
+                {
+                    Destroy(Spawner.transform.GetChild(0).gameObject);
+                    GameObject nextMob = Instantiate(mobs[mobCounter + skipCount], transform.position, Quaternion.identity);
+                    nextMob.name = "currrentEnemy_" + mobCounter;
+                    nextMob.transform.SetParent(Spawner.transform);
+                    allowSpawn = false;
+                    nextMob.GetComponent<MonsterManager>().isSpawn = true;
+                    mobCounter += skipCount;
+                    player.score = 0;
+                    player.gold -= skipPayment;
+                    SoundManager.PlaySound("LevelUp");
+                }
+                else
+                {
+                    chest.MainTextDisplay("You cannot skip level anymore");
+                }
             }
             else
             {
-                chest.MainTextDisplay("You cannot skip level anymore");
+                chest.MainTextDisplay("You do not have enough gold");
             }
-        }
-        else
-        {
-            chest.MainTextDisplay("You do not have enough gold");
         }
     }
 

@@ -5,11 +5,11 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     public float score, scoreToNextLevel;
-    public int chestCount, level, attack, specialAttack, gold, diamond;
+    public int chestCount, level, attack, specialAttack, gold, diamond, skipForward;
     public float skillTimer, cooldownDecrease, doubleStrike;
     public float lastRandomNumber = 0.01f;
-    public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect;
-    public Text scoreText, goldText, diamondText;
+    public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect, usedSkill, isPoisoned, CDSkillActivated = false;
+    public Text scoreText, goldText, diamondText, skipForwardText;
     public Image scoreImage, skillCooldownImage;
     public Chest chest;
     public AbilitiesManager abilitiesManager;
@@ -24,8 +24,8 @@ public class Player : MonoBehaviour
     void Start()
     {
         attack = 1;
-        specialAttack = 50;
-
+        specialAttack = 5;
+        diamond = 500;
         skillReady = true;
         chest = FindObjectOfType<Chest>();
     }
@@ -33,6 +33,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (SkillItemsId.Contains(10) && !CDSkillActivated)
+        {
+            skillTimer -= skillTimer * (abilitiesManager.TimeBurst() / 100);
+            CDSkillActivated = true;
+        }
+
         if (!skillReady)
         {
             skillCooldownImage.fillAmount -= 1.0f / skillTimer * Time.deltaTime;
@@ -60,13 +66,14 @@ public class Player : MonoBehaviour
 
     public void increaseScoreByWeapon()
     {
-        int totalDamage = attack + abilitiesManager.skillOne() + abilitiesManager.skillTwo();
+        int totalDamage = attack + abilitiesManager.EnhanceSword() + abilitiesManager.EnhanceSwordPro() + abilitiesManager.MegaStrike() + abilitiesManager.EnergUnleash();
         score += totalDamage;
         normalAttackEffect = true;
     }
     public void increaseScoreBySkill()
     {
-        int totalDamage = specialAttack + abilitiesManager.skillThree();
+        int totalDamage = specialAttack + abilitiesManager.EnhancePunch() + abilitiesManager.MegaPunch();
+        usedSkill = true;
         if (skillReady)
         {
             skillCooldownImage.fillAmount = 1f;

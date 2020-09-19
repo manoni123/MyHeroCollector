@@ -800,6 +800,26 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
+      value: 6
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Mega Sword Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: The name says it all... increase sword damage by 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 8000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
       value: 5
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
@@ -1324,7 +1344,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 9
+      value: 10
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Time Master
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Decrease your skill CD by 25%
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -1366,13 +1406,16 @@ RectTransform:
   - {fileID: 1270264736}
   - {fileID: 843447529}
   - {fileID: 646271915}
+  - {fileID: 707193428}
+  - {fileID: 249987252}
+  - {fileID: 2129014405}
   m_Father: {fileID: 1305147217}
   m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 0}
   m_AnchorMax: {x: 1, y: 0}
-  m_AnchoredPosition: {x: -168.5, y: 293}
-  m_SizeDelta: {x: 250.7, y: 392.1}
+  m_AnchoredPosition: {x: -171.57, y: 293}
+  m_SizeDelta: {x: 256.83, y: 392.1}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1001 &59345943
 PrefabInstance:
@@ -2372,6 +2415,85 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 610640733}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &116891903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 116891904}
+  - component: {fileID: 116891905}
+  - component: {fileID: 116891906}
+  m_Layer: 5
+  m_Name: Text
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &116891904
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116891903}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 1524433377}
+  m_RootOrder: 0
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: 75.9, y: -0.000026703}
+  m_SizeDelta: {x: 91.2, y: 138.5}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!222 &116891905
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116891903}
+  m_CullTransparentMesh: 0
+--- !u!114 &116891906
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 116891903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 1
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 148
+    m_Alignment: 4
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 10
 --- !u!1001 &132318752
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2998,8 +3120,11 @@ MonoBehaviour:
   playerLevelText: {fileID: 2012635985}
   normalAttackText: {fileID: 1730687074}
   specialAttackText: {fileID: 1270264737}
-  cooldownDecreaseText: {fileID: 843447530}
-  DoubleStrikeText: {fileID: 646271916}
+  cooldownDecreaseText: {fileID: 249987253}
+  PoisonSkillText: {fileID: 646271916}
+  LightningSkillText: {fileID: 707193429}
+  IceSkillText: {fileID: 843447530}
+  GoldIncreaseText: {fileID: 2129014406}
   skillName: {fileID: 1001082958}
   skillDesc: {fileID: 503537111}
   skillCost: {fileID: 379952600}
@@ -3899,6 +4024,85 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 235647375}
   m_CullTransparentMesh: 0
+--- !u!1 &249987251
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 249987252}
+  - component: {fileID: 249987254}
+  - component: {fileID: 249987253}
+  m_Layer: 5
+  m_Name: CoolDownText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &249987252
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249987251}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 39195709}
+  m_RootOrder: 6
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 126.05, y: -202}
+  m_SizeDelta: {x: 249.31, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &249987253
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249987251}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &249987254
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 249987251}
+  m_CullTransparentMesh: 0
 --- !u!1 &252657750
 GameObject:
   m_ObjectHideFlags: 0
@@ -4552,7 +4756,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 11
+      value: 12
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Energy Unleash
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Want to slice and dice every mob in your sight? this is it...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 50000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -6050,7 +6274,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 6
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Punch and Shield
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Decrease your enemy damage by 25%
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 20
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -8539,7 +8783,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 8
+      value: 9
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Lightning Strike
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Know Thor? want to be like him? buy this and see...
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 15
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -9175,7 +9439,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 4
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Freeze Punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Gives you a chance to cause freeze with each punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 4000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -9470,6 +9754,26 @@ PrefabInstance:
       propertyPath: skillID
       value: 3
       objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Mega Punch
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Gives that punch an extra mega power
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 1000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: m_Sprite
@@ -9637,7 +9941,7 @@ GameObject:
   - component: {fileID: 646271917}
   - component: {fileID: 646271916}
   m_Layer: 5
-  m_Name: Chance for double strike
+  m_Name: PoisonText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -9659,8 +9963,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128.64, y: -141.7}
-  m_SizeDelta: {x: 244.13, y: 30}
+  m_AnchoredPosition: {x: 126.05, y: -141.7}
+  m_SizeDelta: {x: 249.31, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &646271916
 MonoBehaviour:
@@ -9695,7 +9999,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Attack
+  m_Text: 
 --- !u!222 &646271917
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -10150,6 +10454,85 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 695306358}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &707193427
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 707193428}
+  - component: {fileID: 707193430}
+  - component: {fileID: 707193429}
+  m_Layer: 5
+  m_Name: LightningText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &707193428
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707193427}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 39195709}
+  m_RootOrder: 5
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 126.05, y: -171.8}
+  m_SizeDelta: {x: 249.31, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &707193429
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707193427}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &707193430
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 707193427}
+  m_CullTransparentMesh: 0
 --- !u!1001 &707727905
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -10429,6 +10812,21 @@ PrefabInstance:
       propertyPath: skillID
       value: 2
       objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Enhance Sword
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Enhances your basic attack by 1 damage.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 400
+      objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: m_Sprite
@@ -10481,12 +10879,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   mobCounter: 0
+  skipPayment: 0
+  skipCount: 0
   allowSpawn: 0
   fightStart: 0
+  skipCountIncrease: 0
   guiButton:
-  - {fileID: 998966235}
-  - {fileID: 1328157674}
-  - {fileID: 1741446197}
+  - {fileID: 998966233}
+  - {fileID: 1328157672}
+  - {fileID: 1741446195}
+  - {fileID: 1524433376}
   player: {fileID: 0}
   mobs:
   - {fileID: 6793602826469676942, guid: 95a9744859651ce4f91fdbcccaa64fb0, type: 3}
@@ -12072,7 +12474,7 @@ GameObject:
   - component: {fileID: 843447531}
   - component: {fileID: 843447530}
   m_Layer: 5
-  m_Name: Cooldown Decrease
+  m_Name: FreezeText
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -12094,8 +12496,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128.64, y: -111}
-  m_SizeDelta: {x: 244.13, y: 30}
+  m_AnchoredPosition: {x: 126.05, y: -111}
+  m_SizeDelta: {x: 249.31, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &843447530
 MonoBehaviour:
@@ -12130,7 +12532,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Attack
+  m_Text: 
 --- !u!222 &843447531
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -12580,14 +12982,69 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 10
+      value: 11
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Jump Forward
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: 'Increases your monster skip jump '
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 30000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: -3678351811139979755, guid: 4f01116e86ee7d14ba1e523ab32170e0,
+      objectReference: {fileID: 2523537964277533384, guid: 4f01116e86ee7d14ba1e523ab32170e0,
         type: 3}
+    - target: {fileID: 3494834928665423738, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalScale.z
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928665423738, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: -0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928665423738, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 0.7071068
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928665423738, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: -90
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928313727674, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928313727674, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928313727674, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251f0e246c459b346bd66391ea743822, type: 3}
 --- !u!1 &907147955
@@ -14014,7 +14471,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 13
+      value: 14
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Gold Sack
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Increase your gold gain from monsters by 50%
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -15984,7 +16461,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!224 &1248264711
 RectTransform:
   m_ObjectHideFlags: 0
@@ -16382,8 +16859,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128.64, y: -82}
-  m_SizeDelta: {x: 244.13, y: 30}
+  m_AnchoredPosition: {x: 126.05, y: -82}
+  m_SizeDelta: {x: 249.31, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1270264737
 MonoBehaviour:
@@ -16418,7 +16895,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Attack
+  m_Text: 
 --- !u!222 &1270264738
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -17601,7 +18078,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 7
+      value: 8
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Poison Blade
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Coats your blade with poison, 15% chance to inflict poison
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 10000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 10
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -17850,13 +18347,33 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 12
+      value: 13
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Extra Drop
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Increases your drop rate for rare items
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 5000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 30
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 6977888419319678485, guid: 4f01116e86ee7d14ba1e523ab32170e0,
+      objectReference: {fileID: -3185450327771208920, guid: 4f01116e86ee7d14ba1e523ab32170e0,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251f0e246c459b346bd66391ea743822, type: 3}
@@ -19289,6 +19806,83 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 1509870297}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &1524433376
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1524433377}
+  - component: {fileID: 1524433379}
+  - component: {fileID: 1524433378}
+  m_Layer: 5
+  m_Name: SkipLevelsX
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 0
+--- !u!224 &1524433377
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524433376}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children:
+  - {fileID: 116891904}
+  m_Father: {fileID: 2043498565}
+  m_RootOrder: 11
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0.5, y: 0.5}
+  m_AnchorMax: {x: 0.5, y: 0.5}
+  m_AnchoredPosition: {x: -200, y: 365}
+  m_SizeDelta: {x: 100, y: 100}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &1524433378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524433376}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fe87c0e1cc204ed48ad3b37840f39efc, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 1, g: 1, b: 1, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_Sprite: {fileID: 5236416747876142712, guid: 4f01116e86ee7d14ba1e523ab32170e0,
+    type: 3}
+  m_Type: 0
+  m_PreserveAspect: 0
+  m_FillCenter: 1
+  m_FillMethod: 4
+  m_FillAmount: 1
+  m_FillClockwise: 1
+  m_FillOrigin: 0
+  m_UseSpriteMesh: 0
+  m_PixelsPerUnitMultiplier: 1
+--- !u!222 &1524433379
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1524433376}
+  m_CullTransparentMesh: 0
 --- !u!1001 &1536714416
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -21587,7 +22181,27 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 15
+      value: 16
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Gold Gold So much Gold!
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Increase your gold gain from monster by another 50%
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 20000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 50
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
@@ -21776,8 +22390,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128.64, y: -52.3}
-  m_SizeDelta: {x: 244.13, y: 30}
+  m_AnchoredPosition: {x: 126.05, y: -52.3}
+  m_SizeDelta: {x: 249.31, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1730687074
 MonoBehaviour:
@@ -21812,7 +22426,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Attack
+  m_Text: 
 --- !u!222 &1730687075
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -22234,7 +22848,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 2043498565}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: -90}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -25227,6 +25841,26 @@ PrefabInstance:
       propertyPath: skillID
       value: 4
       objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Warrior Fierce
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Increase your sword thrust by 2.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 2000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: m_Sprite
@@ -25272,6 +25906,7 @@ MonoBehaviour:
   specialAttack: 0
   gold: 0
   diamond: 0
+  skipForward: 0
   skillTimer: 3
   cooldownDecrease: 0
   doubleStrike: 0
@@ -25280,9 +25915,13 @@ MonoBehaviour:
   allowReset: 0
   normalAttackEffect: 0
   specialAttackEffect: 0
+  usedSkill: 0
+  isPoisoned: 0
+  CDSkillActivated: 0
   scoreText: {fileID: 860068476}
   goldText: {fileID: 1731874620}
   diamondText: {fileID: 10988501}
+  skipForwardText: {fileID: 116891906}
   scoreImage: {fileID: 539107625}
   skillCooldownImage: {fileID: 1473330304}
   chest: {fileID: 0}
@@ -26498,8 +27137,8 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128.64, y: -22}
-  m_SizeDelta: {x: 244.13, y: 30}
+  m_AnchoredPosition: {x: 126.05, y: -22}
+  m_SizeDelta: {x: 249.31, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2012635985
 MonoBehaviour:
@@ -26534,7 +27173,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: Normal Attack
+  m_Text: 
 --- !u!222 &2012635986
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -26722,6 +27361,7 @@ RectTransform:
   - {fileID: 1328157673}
   - {fileID: 16683612}
   - {fileID: 324268970}
+  - {fileID: 1524433377}
   - {fileID: 1741446196}
   m_Father: {fileID: 0}
   m_RootOrder: 5
@@ -27751,13 +28391,33 @@ PrefabInstance:
     - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: skillID
-      value: 14
+      value: 15
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillName
+      value: Extra Drop Deluxe
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Further increase your chance to gain rare loot and expand that collection
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 15000
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDiamondCost
+      value: 100
       objectReference: {fileID: 0}
     - target: {fileID: 3494834928665423741, guid: 251f0e246c459b346bd66391ea743822,
         type: 3}
       propertyPath: m_Sprite
       value: 
-      objectReference: {fileID: 5427411588517644010, guid: 4f01116e86ee7d14ba1e523ab32170e0,
+      objectReference: {fileID: 6725509961375370536, guid: 4f01116e86ee7d14ba1e523ab32170e0,
         type: 3}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251f0e246c459b346bd66391ea743822, type: 3}
@@ -28365,6 +29025,85 @@ RectTransform:
     type: 3}
   m_PrefabInstance: {fileID: 2109329103}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &2129014404
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 2129014405}
+  - component: {fileID: 2129014407}
+  - component: {fileID: 2129014406}
+  m_Layer: 5
+  m_Name: GoldIncreaseText
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!224 &2129014405
+RectTransform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129014404}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_Children: []
+  m_Father: {fileID: 39195709}
+  m_RootOrder: 7
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+  m_AnchorMin: {x: 0, y: 1}
+  m_AnchorMax: {x: 0, y: 1}
+  m_AnchoredPosition: {x: 126.05, y: -233.2}
+  m_SizeDelta: {x: 249.31, y: 30}
+  m_Pivot: {x: 0.5, y: 0.5}
+--- !u!114 &2129014406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129014404}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5f7201a12d95ffc409449d95f23cf332, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Material: {fileID: 0}
+  m_Color: {r: 0.19607843, g: 0.19607843, b: 0.19607843, a: 1}
+  m_RaycastTarget: 1
+  m_OnCullStateChanged:
+    m_PersistentCalls:
+      m_Calls: []
+    m_TypeName: UnityEngine.UI.MaskableGraphic+CullStateChangedEvent, UnityEngine.UI,
+      Version=1.0.0.0, Culture=neutral, PublicKeyToken=null
+  m_FontData:
+    m_Font: {fileID: 10102, guid: 0000000000000000e000000000000000, type: 0}
+    m_FontSize: 14
+    m_FontStyle: 0
+    m_BestFit: 1
+    m_MinSize: 10
+    m_MaxSize: 40
+    m_Alignment: 3
+    m_AlignByGeometry: 0
+    m_RichText: 1
+    m_HorizontalOverflow: 0
+    m_VerticalOverflow: 0
+    m_LineSpacing: 1
+  m_Text: 
+--- !u!222 &2129014407
+CanvasRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2129014404}
+  m_CullTransparentMesh: 0
 --- !u!114 &2139072577 stripped
 MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5395273236573936714, guid: 0a156d3b95ac63e45bdf8636d21428d7,
@@ -28504,6 +29243,16 @@ PrefabInstance:
       propertyPath: player
       value: 
       objectReference: {fileID: 1919762891}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillDescription
+      value: Enhances your skill attack by 5 damage.
+      objectReference: {fileID: 0}
+    - target: {fileID: 3494834928909280051, guid: 251f0e246c459b346bd66391ea743822,
+        type: 3}
+      propertyPath: skillGoldCost
+      value: 300
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 251f0e246c459b346bd66391ea743822, type: 3}
 --- !u!1001 &5395273236459169350

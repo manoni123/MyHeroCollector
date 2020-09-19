@@ -44,6 +44,7 @@ public class Skill : MonoBehaviour
             if (player.gold >= goldCost && player.diamond >= diamondCost)
             {
                 player.gold -= goldCost;
+                player.diamond -= diamondCost;
                 player.SkillItemsId.Add(skillId);
                 abilitiesManager.DetailsInfo[2].SetActive(false);
                 SoundManager.PlaySound("LevelUp");
