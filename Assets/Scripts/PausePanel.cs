@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
 {
-    private bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown;
-    public GameObject collectionWindow, settingWindow, shopWindow, leaderboardWindow, abilityWindow;
+    private bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown, restartShown;
+    public GameObject collectionWindow, settingWindow, shopWindow, leaderboardWindow, abilityWindow, restartWindow;
     public SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
@@ -16,6 +16,7 @@ public class PausePanel : MonoBehaviour
         settingShown = false;
         leaderboardShown = false;
         abilityShown = false;
+        restartShown = false;
     }
 
     public void ShowCollection()
@@ -99,6 +100,24 @@ public class PausePanel : MonoBehaviour
         else
         {
             abilityWindow.SetActive(false);
+            SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 1f;
+        }
+    }
+
+    public void ShowRestartWindow()
+    {
+        restartShown = !restartShown;
+        if (restartShown)
+        {
+            restartWindow.SetActive(true);
+            SoundManager.PlaySound("ClickEcho");
+            restartWindow.GetComponent<RestartManager>().RestartText.text = restartWindow.GetComponent<RestartManager>().originText;
+            Time.timeScale = 0f;
+        }
+        else
+        {
+            restartWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
             Time.timeScale = 1f;
         }

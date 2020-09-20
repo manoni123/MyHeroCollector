@@ -5,7 +5,7 @@ using UnityEngine;
 public class effect : MonoBehaviour
 {
     public float effectDelayDestory;
-    public string clipEffectName;
+    public string effectAudio;
     private void Start()
     {
         StartCoroutine("clipDelay");
@@ -13,7 +13,7 @@ public class effect : MonoBehaviour
 
     IEnumerator clipDelay()
     {
-        SoundManager.PlaySound(clipEffectName);
+        SoundManager.PlaySound(effectAudio);
         yield return new WaitForSeconds(effectDelayDestory);
         Destroy(gameObject);
     }

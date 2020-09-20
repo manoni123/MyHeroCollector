@@ -7,16 +7,22 @@ using UnityEngine.UI;
 public class MonsterSpawn : MonoBehaviour
 {
     Chest chest;
-    public int mobCounter, skipPayment, skipCount;
+    public int mobCounter, skipPayment, skipCount, restartPayment;
     public bool allowSpawn, fightStart = false, skipCountIncrease = false, soundPlayed = false;
-    public GameObject[] guiButton;
     public Player player;
+    public Text RestartPanelText;
+    public PausePanel RestartPanel;
+    Vector3 spawnMobPos;
+    public float spawnDecendSpeed;
+    public GameObject[] guiButton;
     public GameObject[] mobs;
+    GameObject nextMob;
 
     private void Start()
     {
         chest = GameObject.Find("PlayerUI").GetComponent<Chest>();
-        player = GameObject.FindObjectOfType<Player>();
+        player = FindObjectOfType<Player>();
+        restartPayment = 100;
         skipPayment = 200;
     }
 
@@ -34,12 +40,13 @@ public class MonsterSpawn : MonoBehaviour
                 allowSpawn = true;
                 if (allowSpawn)
                 {
-                    GameObject nextMob = Instantiate(mobs[mobCounter], transform.position, Quaternion.identity);
+                    spawnMobPos = new Vector3(0.0f, 1f);
+                    nextMob = Instantiate(mobs[mobCounter], spawnMobPos, Quaternion.identity);
                     nextMob.name = "currrentEnemy_" + mobCounter;
                     nextMob.transform.SetParent(transform);
                     allowSpawn = false;
                     nextMob.GetComponent<MonsterManager>().isSpawn = true;
-                    if (mobCounter == (mobs.Length - 1))
+                    if (mobCounter == (mobs.Length - 1)) //restart mobs when reaching final monster
                     {
                         mobCounter = 0;
                     }
@@ -50,6 +57,12 @@ public class MonsterSpawn : MonoBehaviour
                 }
             }
         }
+        //update the mob position to initial position to show decend effect
+        if (fightStart)
+        {
+            nextMob.transform.position = Vector3.MoveTowards(nextMob.transform.position, transform.position, spawnDecendSpeed * Time.deltaTime); 
+        }
+
         if (player.SkillItemsId.Contains(11))
         {
             if (!skipCountIncrease)
@@ -72,7 +85,7 @@ public class MonsterSpawn : MonoBehaviour
                 if (remainingCount > skipCount)
                 {
                     Destroy(Spawner.transform.GetChild(0).gameObject);
-                    GameObject nextMob = Instantiate(mobs[mobCounter + (skipCount -1)], transform.position, Quaternion.identity);
+                    nextMob = Instantiate(mobs[mobCounter + skipCount], spawnMobPos, Quaternion.identity);
                     nextMob.name = "currrentEnemy_" + mobCounter;
                     nextMob.transform.SetParent(Spawner.transform);
                     allowSpawn = false;
@@ -101,6 +114,27 @@ public class MonsterSpawn : MonoBehaviour
         for (int i = 0; i < guiButton.Length; i++)
         {
             guiButton[i].gameObject.SetActive(true);
+        }
+    }
+    public void RestartMonsters(GameObject Spawner)
+    {
+        if (player.gold >= restartPayment)
+        {
+            Destroy(Spawner.transform.GetChild(0).gameObject);
+            nextMob = Instantiate(mobs[0], transform.position, Quaternion.identity);
+            nextMob.name = "currrentEnemy_" + mobCounter;
+            nextMob.transform.SetParent(Spawner.transform);
+            allowSpawn = false;
+            nextMob.GetComponent<MonsterManager>().isSpawn = true;
+            mobCounter = 0;
+            player.score = 0;
+            player.gold -= restartPayment;
+            SoundManager.PlaySound("LevelUp");
+            RestartPanel.ShowRestartWindow();
+        }
+        else
+        {
+            RestartPanelText.text = "You do not have enough gold... how shame :O";
         }
     }
 }

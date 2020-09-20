@@ -117,6 +117,7 @@ MonoBehaviour:
   lootTable: {fileID: 11400000, guid: 4d033a08a475b3e4da3b18e7ae482194, type: 2}
   monsterId: 16
   monsterLevel: 17
+  explosionDamage: 0
   monsterHealth: 260
   monsterDamageCooldown: 4
   chestId: 0
@@ -124,6 +125,7 @@ MonoBehaviour:
   isSpawn: 0
   isBoss: 0
   isPoisoned: 0
+  rageMode: 0
   Effects:
   - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
   - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}
@@ -132,6 +134,7 @@ MonoBehaviour:
   - {fileID: 3007440079259132676, guid: 01b9492925368e54a89953544b53fffc, type: 3}
   - {fileID: 2826422088785422361, guid: cd2b513cb4d4a5b44aec207cb5f920b1, type: 3}
   - {fileID: 0}
+  - {fileID: 215306438011720258, guid: b0921930e59f31347b44256d5d17da8f, type: 3}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
+  cameraController: {fileID: 0}

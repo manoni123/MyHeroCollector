@@ -25,6 +25,8 @@ public class MonsterManager : MonoBehaviour
     /// #4 = lightning effect
     /// #5 = ice effect applied
     /// #6 = Boss Rage Mode Explosion
+    /// #7 = spawn normal
+    /// #8 = spawn boss
     /// </summary>
     private void Start()
     {
@@ -34,14 +36,17 @@ public class MonsterManager : MonoBehaviour
         saveFile = FindObjectOfType<SaveFile>();
         player.scoreToNextLevel = monsterHealth;
         InvokeRepeating("DamagePlayer", 2f, monsterDamageCooldown);
-
+        Vector3 spawnEffectPos = new Vector3(0.0f, 2f);
         if (isBoss)
         {
+            Instantiate(Effects[7], transform.position + spawnEffectPos, Quaternion.identity);
+            player.scoreImage.color = new Color(69f / 255f, 130f / 255f, 179f / 255f);
             player.scoreImage.color = Color.red;
             SoundManager.PlaySound("BossBattle");
         }
         else if (!isBoss)
         {
+            Instantiate(Effects[7], transform.position + spawnEffectPos, Quaternion.identity);
             player.scoreImage.color = new Color(69f/255f,130f/255f,179f/255f);
         }
     }
@@ -55,7 +60,6 @@ public class MonsterManager : MonoBehaviour
         else
         {
             player.scoreText.text = "Lv. " + monsterLevel + "       " + player.score.ToString() + " / " + monsterHealth.ToString();
-
         }
 
         MonsterEffects();
