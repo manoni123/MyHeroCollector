@@ -128,14 +128,12 @@ public class SoundManager : MonoBehaviour
                 audioSrc.PlayOneShot(rockSlide);
                 break;
             case "Menu":
-                audioSrc.Stop();
                 audioSrc.PlayOneShot(menu);
                 break;
             case "Home":
-                audioSrc.Stop();
                 audioSrc.PlayOneShot(homeTheme);
                 break;
-            case "Adventure1":
+            case "Adventure":
                 audioSrc.Stop();
                 audioSrc.PlayOneShot(adventureTheme);
                 break;
@@ -148,8 +146,13 @@ public class SoundManager : MonoBehaviour
                 audioSrc.PlayOneShot(bossBattle);
                 break;
             case "GoodNight":
-                audioSrc.Stop();
                 audioSrc.PlayOneShot(goodNight);
+                break;
+            case "Pause" :
+                audioSrc.Pause();
+                break;
+            case "Play":
+                audioSrc.Play();
                 break;
         }
     }

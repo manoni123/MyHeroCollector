@@ -8,13 +8,14 @@ public class MonsterManager : MonoBehaviour
     Chest chest;
     SaveFile saveFile;
     public LootTable lootTable;
-    public int monsterId, monsterLevel;
+    public int monsterId, monsterLevel, explosionDamage;
     public float monsterHealth;
     public float monsterDamageCooldown;
     public int chestId;
     public int goldDrop;
-    public bool isSpawn = false, isBoss, isPoisoned;
+    public bool isSpawn = false, isBoss, isPoisoned = false, rageMode;
     public GameObject[] Effects;
+    public CameraController cameraController;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
     /// <summary>Effects explain
     /// #0 = damage by normal attack
@@ -22,12 +23,14 @@ public class MonsterManager : MonoBehaviour
     /// #2 = attack player w/ projectile
     /// #3 = poison skill applied
     /// #4 = lightning effect
-    /// #5 = ice effect applid
+    /// #5 = ice effect applied
+    /// #6 = Boss Rage Mode Explosion
     /// </summary>
     private void Start()
     {
         player = GameObject.Find("Player").GetComponent<Player>();
         chest = GameObject.Find("PlayerUI").GetComponent<Chest>();
+        cameraController = GameObject.FindObjectOfType<CameraController>();
         saveFile = FindObjectOfType<SaveFile>();
         player.scoreToNextLevel = monsterHealth;
         InvokeRepeating("DamagePlayer", 2f, monsterDamageCooldown);
@@ -35,6 +38,7 @@ public class MonsterManager : MonoBehaviour
         if (isBoss)
         {
             player.scoreImage.color = Color.red;
+            SoundManager.PlaySound("BossBattle");
         }
         else if (!isBoss)
         {
@@ -51,11 +55,12 @@ public class MonsterManager : MonoBehaviour
         else
         {
             player.scoreText.text = "Lv. " + monsterLevel + "       " + player.score.ToString() + " / " + monsterHealth.ToString();
+
         }
 
         MonsterEffects();
 
-        //bite off players score every some time
+        //calculate death
         if (player.score >= player.scoreToNextLevel && isSpawn)
         {
             Death();
@@ -95,12 +100,25 @@ public class MonsterManager : MonoBehaviour
             IceSkill();
             player.specialAttackEffect = false;
         }
+        //check for boss rage mode
+        if (isBoss && player.score >= monsterHealth / 2 && !rageMode)
+        {
+            StartCoroutine("BossRageShakeScreen");
+            InvokeRepeating("BossRageMode", 1f, 1f);
+            rageMode = true;
+        }
     }
 
     void Death()
     {
         {
-         //   chest.GetComponent<Chest>().MainTextDisplay();
+            //   chest.GetComponent<Chest>().MainTextDisplay();
+            if (isBoss)
+            {
+                SoundManager.PlaySound("Adventure");
+                CancelInvoke("BossRageMode");
+                rageMode = false;
+            }
             CancelInvoke("DamagePlayer");
             player.chestCount++;
             MakeLoot();
@@ -150,14 +168,14 @@ public class MonsterManager : MonoBehaviour
     {
         if (player.SkillItemsId.Contains(8))
         {
-            float chance = Random.Range(0, 100);
-            if (chance >= 75f)
+            if (!isPoisoned)
             {
-                isPoisoned = true;
-                if (isPoisoned)
+                float chance = Random.Range(0, 100);
+                if (chance >= 75f)
                 {
                     Instantiate(Effects[3], transform.position, Quaternion.identity);
                     InvokeRepeating("PoisonSkillDamage", 2f, 1f);
+                    isPoisoned = true;
                 }
             }
         }
@@ -178,7 +196,6 @@ public class MonsterManager : MonoBehaviour
                 Instantiate(Effects[4], transform.position, Quaternion.identity);
                 player.score += player.abilitiesManager.LightningStrike(); ;
             }
-
         }
     }
 
@@ -192,8 +209,27 @@ public class MonsterManager : MonoBehaviour
                 Instantiate(Effects[5], transform.position, Quaternion.identity);
                 monsterDamageCooldown += monsterDamageCooldown * (player.abilitiesManager.FreezePunch() / 100);
             }
-
         }
+    }
 
+    void BossRageMode()
+    {
+        float spawnY = Random.Range(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).y, Camera.main.ScreenToWorldPoint(new Vector2(0, Screen.height - 200)).y);
+        float spawnX = Random.Range(Camera.main.ScreenToWorldPoint(new Vector2(0, 0)).x, Camera.main.ScreenToWorldPoint(new Vector2(Screen.width, 0)).x);
+        Vector2 spawnPos = new Vector2(spawnX, spawnY);
+        Instantiate(Effects[6], spawnPos, Quaternion.identity);
+        player.score -= explosionDamage;
+    }
+
+    IEnumerator BossRageShakeScreen()
+    {
+        cameraController.isShake = true;
+        cameraController.CameraShake(0.5f);
+        yield return new WaitForSeconds(0.6f);
+        cameraController.gameObject.transform.position = new Vector3(0, 0, -10);
+        cameraController.CameraShake(0.5f);
+        yield return new WaitForSeconds(0.6f);
+        cameraController.isShake = false;
+        cameraController.gameObject.transform.position = new Vector3(0, 0, -10);
     }
 }

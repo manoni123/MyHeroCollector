@@ -8,7 +8,7 @@ public class MonsterSpawn : MonoBehaviour
 {
     Chest chest;
     public int mobCounter, skipPayment, skipCount;
-    public bool allowSpawn, fightStart = false, skipCountIncrease = false;
+    public bool allowSpawn, fightStart = false, skipCountIncrease = false, soundPlayed = false;
     public GameObject[] guiButton;
     public Player player;
     public GameObject[] mobs;
@@ -24,6 +24,11 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (fightStart)
         {
+            if (!soundPlayed)
+            {
+                SoundManager.PlaySound("Adventure");
+                soundPlayed = true;
+            }
             if (transform.childCount == 0)
             {
                 allowSpawn = true;
@@ -67,7 +72,7 @@ public class MonsterSpawn : MonoBehaviour
                 if (remainingCount > skipCount)
                 {
                     Destroy(Spawner.transform.GetChild(0).gameObject);
-                    GameObject nextMob = Instantiate(mobs[mobCounter + skipCount], transform.position, Quaternion.identity);
+                    GameObject nextMob = Instantiate(mobs[mobCounter + (skipCount -1)], transform.position, Quaternion.identity);
                     nextMob.name = "currrentEnemy_" + mobCounter;
                     nextMob.transform.SetParent(Spawner.transform);
                     allowSpawn = false;

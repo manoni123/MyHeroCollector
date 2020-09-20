@@ -28,6 +28,7 @@ public class Player : MonoBehaviour
         diamond = 500;
         skillReady = true;
         chest = FindObjectOfType<Chest>();
+        Debug.Log(Screen.height);
     }
 
     // Update is called once per frame

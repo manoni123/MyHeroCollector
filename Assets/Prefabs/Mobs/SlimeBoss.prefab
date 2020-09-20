@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 4991863815591378849}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.17, y: 0.85, z: 0}
-  m_LocalScale: {x: 2, y: 2, z: 1}
+  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -117,13 +117,15 @@ MonoBehaviour:
   lootTable: {fileID: 11400000, guid: cdec00f14618a5643b721adb6a5fbc57, type: 2}
   monsterId: 1001
   monsterLevel: 13
+  explosionDamage: 3
   monsterHealth: 200
-  monsterDamageCooldown: 5
+  monsterDamageCooldown: 3
   chestId: 0
   goldDrop: 500
   isSpawn: 0
   isBoss: 1
   isPoisoned: 0
+  rageMode: 0
   Effects:
   - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
   - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}
@@ -131,8 +133,8 @@ MonoBehaviour:
   - {fileID: 8914619443571497082, guid: 7f52fe1579792a24cba17922eafd602c, type: 3}
   - {fileID: 3007440079259132676, guid: 01b9492925368e54a89953544b53fffc, type: 3}
   - {fileID: 2826422088785422361, guid: cd2b513cb4d4a5b44aec207cb5f920b1, type: 3}
+  - {fileID: 8075719864986094581, guid: 8ceffa8464798f140a9bebc758b761fa, type: 3}
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
-  - {fileID: 0}
-  abilitiesManager: {fileID: 0}
+  cameraController: {fileID: 0}

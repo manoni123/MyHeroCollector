@@ -25,11 +25,14 @@ public class PausePanel : MonoBehaviour
         {
             collectionWindow.SetActive(true);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 0f;
+
         }
         else
         {
             collectionWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 1f;
         }
     }
 
@@ -40,11 +43,13 @@ public class PausePanel : MonoBehaviour
         {
             shopWindow.SetActive(true);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 0f;
         }
         else
         {
             shopWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 1f;
         }
     }
 
@@ -55,11 +60,13 @@ public class PausePanel : MonoBehaviour
         {
             settingWindow.SetActive(true);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 0f;
         }
         else
         {
             settingWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 1f;
         }
     }
 
@@ -70,11 +77,13 @@ public class PausePanel : MonoBehaviour
         {
             leaderboardWindow.SetActive(true);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 0f;
         }
         else
         {
             leaderboardWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 1f;
         }
     }
 
@@ -85,11 +94,13 @@ public class PausePanel : MonoBehaviour
         {
             abilityWindow.SetActive(true);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 0f;
         }
         else
         {
             abilityWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
+            Time.timeScale = 1f;
         }
     }
 }
