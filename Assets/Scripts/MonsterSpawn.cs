@@ -85,7 +85,7 @@ public class MonsterSpawn : MonoBehaviour
                 if (remainingCount > skipCount)
                 {
                     Destroy(Spawner.transform.GetChild(0).gameObject);
-                    nextMob = Instantiate(mobs[mobCounter + skipCount], spawnMobPos, Quaternion.identity);
+                    nextMob = Instantiate(mobs[mobCounter + (skipCount - 1)], spawnMobPos, Quaternion.identity);
                     nextMob.name = "currrentEnemy_" + mobCounter;
                     nextMob.transform.SetParent(Spawner.transform);
                     allowSpawn = false;

@@ -23,8 +23,8 @@ public class AbilitiesManager : MonoBehaviour
         int physicalTotal = player.attack + EnhanceSword() + EnhanceSwordPro() + MegaStrike() + EnergUnleash();
         int specialTotal = player.specialAttack + EnhancePunch() + MegaPunch();
         playerLevelText.text = "Player Level : " + player.level.ToString();
-        normalAttackText.text = "Physical Attack : " + physicalTotal.ToString();
-        specialAttackText.text = "Special Attack : " + specialTotal.ToString();
+        normalAttackText.text = "Sword Attack : " + physicalTotal.ToString();
+        specialAttackText.text = "Punch Attack : " + specialTotal.ToString();
         SkillsUpdate();
     }
 

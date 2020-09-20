@@ -116,5 +116,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: FireExplosion
   scaleSpeed: 0.5
+  positionSpeed: 0
+  destroyAfterSeconds: 1
   targetScale: {x: 8, y: 8, z: 0}
+  enemyPosition: {x: 0, y: 0, z: 0}
+  skillPosition: {x: 0, y: 0, z: 0}
+  afterEffect: {fileID: 0}
   playerTarget: 0
+  enemyTarget: 0
+  hasEffect: 0

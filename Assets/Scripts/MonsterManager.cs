@@ -26,7 +26,8 @@ public class MonsterManager : MonoBehaviour
     /// #5 = ice effect applied
     /// #6 = Boss Rage Mode Explosion
     /// #7 = spawn normal
-    /// #8 = spawn boss
+    /// #8 = skill sent twords
+    /// #9 = 
     /// </summary>
     private void Start()
     {
@@ -100,7 +101,7 @@ public class MonsterManager : MonoBehaviour
         }
         if (player.specialAttackEffect)
         {
-            Instantiate(Effects[1], transform.position, Quaternion.identity);
+            Instantiate(Effects[8], transform.position, Quaternion.identity);
             IceSkill();
             player.specialAttackEffect = false;
         }

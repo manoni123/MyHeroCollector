@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &8508989531241921320
+--- !u!1 &6463133092379062912
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,38 +8,38 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 8508989531241921318}
-  - component: {fileID: 8508989531241921319}
-  - component: {fileID: 8508989531241921317}
-  - component: {fileID: 8508989531241921316}
+  - component: {fileID: 6463133092379062917}
+  - component: {fileID: 6463133092379062914}
+  - component: {fileID: 6463133092379062915}
+  - component: {fileID: 6463133092379062916}
   m_Layer: 0
-  m_Name: EarthC
+  m_Name: Circle
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &8508989531241921318
+--- !u!4 &6463133092379062917
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8508989531241921320}
+  m_GameObject: {fileID: 6463133092379062912}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 8.867201, y: 4.232993, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 3, y: 3, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!212 &8508989531241921319
+--- !u!212 &6463133092379062914
 SpriteRenderer:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8508989531241921320}
+  m_GameObject: {fileID: 6463133092379062912}
   m_Enabled: 1
   m_CastShadows: 0
   m_ReceiveShadows: 0
@@ -70,8 +70,8 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: -476142281
   m_SortingLayer: 1
-  m_SortingOrder: 0
-  m_Sprite: {fileID: 4083348339070847669, guid: 4aa33e3fd6f4d314cb301dbecc9524a1,
+  m_SortingOrder: 1
+  m_Sprite: {fileID: -2413806693520163455, guid: ad1fe6687a0be5648ab203f795fa8da7,
     type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -83,17 +83,31 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!95 &8508989531241921317
+--- !u!114 &6463133092379062915
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6463133092379062912}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8ae5aa31de1aa624bb173513a86e21d1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  effectDelayDestory: 0.23
+  effectAudio: HeroHurt
+--- !u!95 &6463133092379062916
 Animator:
   serializedVersion: 3
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8508989531241921320}
+  m_GameObject: {fileID: 6463133092379062912}
   m_Enabled: 1
   m_Avatar: {fileID: 0}
-  m_Controller: {fileID: 9100000, guid: 48ded75c062bebf408e65a4e849798c4, type: 2}
+  m_Controller: {fileID: 9100000, guid: ac3049d920c43d245875b5ad156a9520, type: 2}
   m_CullingMode: 0
   m_UpdateMode: 0
   m_ApplyRootMotion: 0
@@ -102,39 +116,3 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
---- !u!114 &8508989531241921316
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8508989531241921320}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 15c0e0d9fa2e9bc4fb6a6c78a2eb1689, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: fff163de6c4768941a3cbcdbd068c9ba, type: 2}
-  monsterId: 19
-  monsterLevel: 20
-  explosionDamage: 0
-  monsterHealth: 320
-  monsterDamageCooldown: 4
-  chestId: 0
-  goldDrop: 160
-  isSpawn: 0
-  isBoss: 0
-  isPoisoned: 0
-  rageMode: 0
-  Effects:
-  - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
-  - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}
-  - {fileID: 6453928940616949626, guid: 8250328ed70b47c43a990a44898a9be2, type: 3}
-  - {fileID: 8914619443571497082, guid: 7f52fe1579792a24cba17922eafd602c, type: 3}
-  - {fileID: 3007440079259132676, guid: 01b9492925368e54a89953544b53fffc, type: 3}
-  - {fileID: 2826422088785422361, guid: cd2b513cb4d4a5b44aec207cb5f920b1, type: 3}
-  - {fileID: 0}
-  - {fileID: 215306438011720258, guid: b0921930e59f31347b44256d5d17da8f, type: 3}
-  - {fileID: 378496825530896092, guid: f987c04261ce5f243ac478a405ab4670, type: 3}
-  - {fileID: 0}
-  cameraController: {fileID: 0}

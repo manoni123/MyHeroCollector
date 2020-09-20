@@ -117,8 +117,13 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: HeroHurt
   scaleSpeed: 2
+  positionSpeed: 0
+  destroyAfterSeconds: 1
   targetScale: {x: 8, y: 8, z: 0}
+  enemyPosition: {x: 0, y: 0, z: 0}
+  skillPosition: {x: 0, y: 0, z: 0}
   playerTarget: 1
+  enemyTarget: 0
 --- !u!50 &6453928940616949606
 Rigidbody2D:
   serializedVersion: 4

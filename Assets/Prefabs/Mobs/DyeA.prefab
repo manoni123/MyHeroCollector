@@ -134,6 +134,6 @@ MonoBehaviour:
   - {fileID: 2826422088785422361, guid: cd2b513cb4d4a5b44aec207cb5f920b1, type: 3}
   - {fileID: 0}
   - {fileID: 215306438011720258, guid: b0921930e59f31347b44256d5d17da8f, type: 3}
-  - {fileID: 0}
+  - {fileID: 378496825530896092, guid: f987c04261ce5f243ac478a405ab4670, type: 3}
   - {fileID: 0}
   cameraController: {fileID: 0}

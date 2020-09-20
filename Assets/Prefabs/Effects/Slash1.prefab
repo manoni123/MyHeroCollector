@@ -115,4 +115,4 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   effectDelayDestory: 0.1
-  clipEffectName: SwordSwing
+  effectAudio: SwordSwing

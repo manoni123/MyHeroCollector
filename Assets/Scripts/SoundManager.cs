@@ -56,6 +56,7 @@ public class SoundManager : MonoBehaviour
         heroHurt = Resources.Load<AudioClip>("Audio/HeroHurt");
         spawnNormal = Resources.Load<AudioClip>("Audio/Spawn1");
         spawnBoss = Resources.Load<AudioClip>("Audio/Spawn2");
+        fireSound = Resources.Load<AudioClip>("Audio/fire1");
         audioSrc = GetComponent<AudioSource>();
 
         audioSrc.volume = masterVolume;
@@ -155,6 +156,9 @@ public class SoundManager : MonoBehaviour
                 break;
             case "SpawnBoss":
                 audioSrc.PlayOneShot(spawnBoss);
+                break;
+            case "Fire":
+                audioSrc.PlayOneShot(fireSound);
                 break;
             case "Pause" :
                 audioSrc.Pause();
