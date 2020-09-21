@@ -17,6 +17,8 @@ public class SaveFile : MonoBehaviour
         if (myFile.Load())
         {
             player.level = myFile.GetInt("PlayerLevel");
+            player.playerExp = myFile.GetFloat("PlayerExp");
+            player.goalExp = myFile.GetFloat("GoalExp");
             player.gold = myFile.GetInt("PlayerGold");
             player.diamond = myFile.GetInt("PlayerDiamond");
             player.skipForward = myFile.GetInt("PlayerSkipForward");
@@ -40,6 +42,8 @@ public class SaveFile : MonoBehaviour
         EasyFileSave myFile = new EasyFileSave();
 
         myFile.Add("PlayerLevel", player.level);
+        myFile.Add("PlayerExp", player.playerExp);
+        myFile.Add("GoalExp", player.goalExp);
         myFile.Add("PlayerGold", player.gold);
         myFile.Add("PlayerDiamond", player.diamond);
         myFile.Add("PlayerSkipForward", player.skipForward);

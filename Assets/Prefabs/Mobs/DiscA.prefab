@@ -28,7 +28,7 @@ Transform:
   m_GameObject: {fileID: 3443247612882652774}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: -0.31383896, y: 4.213238, z: 0}
-  m_LocalScale: {x: 1.4, y: 1.4, z: 1}
+  m_LocalScale: {x: 2, y: 2, z: 1}
   m_Children: []
   m_Father: {fileID: 0}
   m_RootOrder: 0
@@ -117,13 +117,14 @@ MonoBehaviour:
   lootTable: {fileID: 11400000, guid: 9daeff3fb6844df429f53a846c49f204, type: 2}
   monsterId: 22
   monsterLevel: 23
-  explosionDamage: 0
-  monsterHealth: 380
-  monsterDamageCooldown: 4
+  explosionDamage: 4
+  monsterHealth: 400
+  monsterExp: 80
+  monsterDamageCooldown: 2
   chestId: 0
   goldDrop: 190
   isSpawn: 0
-  isBoss: 0
+  isBoss: 1
   isPoisoned: 0
   rageMode: 0
   Effects:
@@ -133,7 +134,7 @@ MonoBehaviour:
   - {fileID: 8914619443571497082, guid: 7f52fe1579792a24cba17922eafd602c, type: 3}
   - {fileID: 3007440079259132676, guid: 01b9492925368e54a89953544b53fffc, type: 3}
   - {fileID: 2826422088785422361, guid: cd2b513cb4d4a5b44aec207cb5f920b1, type: 3}
-  - {fileID: 0}
+  - {fileID: 2876426818492080894, guid: 6d09169d9a1cf3342b43ec003aceb0d2, type: 3}
   - {fileID: 215306438011720258, guid: b0921930e59f31347b44256d5d17da8f, type: 3}
   - {fileID: 378496825530896092, guid: f987c04261ce5f243ac478a405ab4670, type: 3}
   - {fileID: 0}

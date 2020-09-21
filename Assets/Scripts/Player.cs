@@ -4,7 +4,7 @@ using UnityEngine.UI;
 using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
-    public float score, scoreToNextLevel;
+    public float score, scoreToNextLevel, playerExp, goalExp;
     public int chestCount, level, attack, specialAttack, gold, diamond, skipForward;
     public float skillTimer, cooldownDecrease, doubleStrike;
     public float lastRandomNumber = 0.01f;
@@ -20,11 +20,15 @@ public class Player : MonoBehaviour
     [Header("Skill List")]
     public List<int> SkillItemsId = new List<int>();
 
+    [Header("Progress List")]
+    public List<int> PlayerProgress = new List<int>(); 
+
     // Use this for initialization
     void Start()
     {
         attack = 1;
         specialAttack = 5;
+        level = 1;
         diamond = 500;
         gold = 150000;
         skillReady = true;
@@ -47,6 +51,11 @@ public class Player : MonoBehaviour
 
         goldText.text = gold.ToString();
         diamondText.text = diamond.ToString();
+
+        if (playerExp >= goalExp)
+        {
+            LevelUp();
+        }
 
         ScoreBarReset();
         preventMinusScore();
@@ -89,5 +98,12 @@ public class Player : MonoBehaviour
     {
         yield return new WaitForSeconds(skillTimer);
         skillReady = true;
+    }
+
+    public void LevelUp()
+    {
+        level++;
+        playerExp = 0;
+        goalExp = goalExp * 1.5f;
     }
 }

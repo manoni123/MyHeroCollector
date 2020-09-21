@@ -118,6 +118,7 @@ MonoBehaviour:
   monsterLevel: 9
   explosionDamage: 0
   monsterHealth: 90
+  monsterExp: 24
   monsterDamageCooldown: 4
   chestId: 0
   goldDrop: 30

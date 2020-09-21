@@ -26570,6 +26570,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   score: 0
   scoreToNextLevel: 0
+  playerExp: 0
+  goalExp: 20
   chestCount: 0
   level: 0
   attack: 0

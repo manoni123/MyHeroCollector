@@ -9,7 +9,7 @@ public class MonsterManager : MonoBehaviour
     SaveFile saveFile;
     public LootTable lootTable;
     public int monsterId, monsterLevel, explosionDamage;
-    public float monsterHealth;
+    public float monsterHealth, monsterExp;
     public float monsterDamageCooldown;
     public int chestId;
     public int goldDrop;
@@ -132,7 +132,7 @@ public class MonsterManager : MonoBehaviour
             isPoisoned = false;
             Destroy(gameObject);
             player.score = 0;
-            player.level++;
+            player.playerExp += monsterExp;
         }
     }
     void GoldDropped()
