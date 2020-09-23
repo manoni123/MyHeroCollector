@@ -8,7 +8,7 @@ public class AbilitiesManager : MonoBehaviour
 {
     // Start is called before the first frame update
     public Player player;
-    public Text playerLevelText, normalAttackText, specialAttackText, cooldownDecreaseText, PoisonSkillText, LightningSkillText, IceSkillText, GoldIncreaseText;
+    public Text playerLevelText, normalAttackText, specialAttackText, cooldownDecreaseText, PoisonSkillText, LightningSkillText, IceSkillText, GoldIncreaseText, TotalCP;
     [Header("Skill Deatails")]
     public Text skillName;
     public Text skillDesc;
@@ -25,6 +25,7 @@ public class AbilitiesManager : MonoBehaviour
         playerLevelText.text = "Player Level : " + player.level.ToString();
         normalAttackText.text = "Sword Attack : " + physicalTotal.ToString();
         specialAttackText.text = "Punch Attack : " + specialTotal.ToString();
+        TotalCP.text = "Total CP: " + player.playerTotalCP.ToString();
         SkillsUpdate();
     }
 

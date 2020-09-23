@@ -9,6 +9,7 @@ public class SaveFile : MonoBehaviour
     public SoundManager soundManager;
     public List<int> CollectionItemsId = new List<int>();
     public List<int> SkillsItemsId = new List<int>();
+    public List<int> PlayerProgressId = new List<int>();
 
     private void Awake()
     {
@@ -22,10 +23,13 @@ public class SaveFile : MonoBehaviour
             player.gold = myFile.GetInt("PlayerGold");
             player.diamond = myFile.GetInt("PlayerDiamond");
             player.skipForward = myFile.GetInt("PlayerSkipForward");
+            player.monsterKillRecord = myFile.GetInt("MonsterKillRecord");
+            player.playerTotalCP = myFile.GetInt("PlayerTotalScore");
             soundManager.masterVolume = myFile.GetFloat("Volume");
             soundManager.isMute = myFile.GetBool("VolumeSprite");
             player.CollectionItemsId = myFile.GetList<int>("PlayerCollection");
             player.SkillItemsId = myFile.GetList<int>("PlayerSkills");
+            player.DialogueProgress = myFile.GetList<int>("PlayerProgress");
         }
 
         myFile.Dispose();
@@ -47,6 +51,8 @@ public class SaveFile : MonoBehaviour
         myFile.Add("PlayerGold", player.gold);
         myFile.Add("PlayerDiamond", player.diamond);
         myFile.Add("PlayerSkipForward", player.skipForward);
+        myFile.Add("MonsterKillRecord", player.monsterKillRecord);
+        myFile.Add("PlayerTotalScore", player.playerTotalCP);
         myFile.Add("Volume", soundManager.masterVolume);
         myFile.Add("VolumeSprite", soundManager.isMute);
         for (int i = 0; i < player.CollectionItemsId.Count; i++)
@@ -64,8 +70,17 @@ public class SaveFile : MonoBehaviour
                 SkillsItemsId.Add(player.SkillItemsId[i]);
             }
         }
+
+        for (int i = 0; i < player.DialogueProgress.Count; i++)
+        {
+            if (!myFile.GetList<int>("PlayerProgress").Contains(i))
+            {
+                PlayerProgressId.Add(player.DialogueProgress[i]);
+            }
+        }
         myFile.Add("PlayerSkills", SkillsItemsId);
         myFile.Add("PlayerCollection", CollectionItemsId);
+        myFile.Add("PlayerProgress", PlayerProgressId);
         myFile.Save();
     }
 }   

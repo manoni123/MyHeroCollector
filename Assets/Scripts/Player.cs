@@ -5,7 +5,7 @@ using System.Collections.Generic;
 public class Player : MonoBehaviour
 {
     public float score, scoreToNextLevel, playerExp, goalExp;
-    public int chestCount, level, attack, specialAttack, gold, diamond, skipForward;
+    public int chestCount, level, attack, specialAttack, gold, diamond, skipForward, monsterKillRecord, playerTotalCP;
     public float skillTimer, cooldownDecrease, doubleStrike;
     public float lastRandomNumber = 0.01f;
     public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect, usedSkill, isPoisoned, CDSkillActivated = false;
@@ -21,7 +21,7 @@ public class Player : MonoBehaviour
     public List<int> SkillItemsId = new List<int>();
 
     [Header("Progress List")]
-    public List<int> PlayerProgress = new List<int>(); 
+    public List<int> DialogueProgress = new List<int>(); 
 
     // Use this for initialization
     void Start()
@@ -33,6 +33,7 @@ public class Player : MonoBehaviour
         gold = 150000;
         skillReady = true;
         chest = FindObjectOfType<Chest>();
+        Debug.Log(Application.persistentDataPath);
     }
 
     // Update is called once per frame
@@ -59,6 +60,7 @@ public class Player : MonoBehaviour
 
         ScoreBarReset();
         preventMinusScore();
+        PlayerTotalCP();
     }
 
     void preventMinusScore()
@@ -105,5 +107,10 @@ public class Player : MonoBehaviour
         level++;
         playerExp = 0;
         goalExp = goalExp * 1.5f;
+    }
+
+    public void PlayerTotalCP()
+    {
+        playerTotalCP = (SkillItemsId.Count * 3) + (CollectionItemsId.Count + monsterKillRecord) * level;
     }
 }

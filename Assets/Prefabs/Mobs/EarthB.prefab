@@ -120,7 +120,7 @@ MonoBehaviour:
   explosionDamage: 0
   monsterHealth: 300
   monsterExp: 44
-  monsterDamageCooldown: 4
+  monsterDamageCooldown: 3
   chestId: 0
   goldDrop: 150
   isSpawn: 0

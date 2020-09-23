@@ -5,7 +5,7 @@ using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
 {
-    private bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown, restartShown;
+    public bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown, restartShown;
     public GameObject collectionWindow, settingWindow, shopWindow, leaderboardWindow, abilityWindow, restartWindow;
     public SoundManager soundManager;
     // Start is called before the first frame update

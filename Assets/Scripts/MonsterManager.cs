@@ -1,5 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
+using System.Runtime.ExceptionServices;
 using UnityEngine;
 
 public class MonsterManager : MonoBehaviour
@@ -128,11 +129,13 @@ public class MonsterManager : MonoBehaviour
             player.chestCount++;
             MakeLoot();
             GoldDropped();
+            DiamondDropped();
             player.usedSkill = false;
             isPoisoned = false;
             Destroy(gameObject);
             player.score = 0;
             player.playerExp += monsterExp;
+            player.monsterKillRecord++;
         }
     }
     void GoldDropped()
@@ -154,6 +157,17 @@ public class MonsterManager : MonoBehaviour
         int sum = (monsterLevel * goldDrop) + (player.level * 2);
         Debug.Log("mob gold is: " + sum);
         player.gold += sum;
+        SoundManager.PlaySound("CoinPick");
+    }
+
+    void DiamondDropped()
+    {
+        float chance = Random.Range(0f, 100f);
+        if (chance >= 95f)
+        {
+            player.diamond++;
+            SoundManager.PlaySound("DiamondPick");
+        }
     }
 
     private void MakeLoot()
