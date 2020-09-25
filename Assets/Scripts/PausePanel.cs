@@ -5,8 +5,8 @@ using UnityEngine.UI;
 
 public class PausePanel : MonoBehaviour
 {
-    public bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown, restartShown;
-    public GameObject collectionWindow, settingWindow, shopWindow, leaderboardWindow, abilityWindow, restartWindow;
+    public bool collectionShown, settingShown, shopShown, leaderboardShown, abilityShown, restartShown, isCreditLayout, isSettingsLayout;
+    public GameObject collectionWindow, settingWindow, shopWindow, leaderboardWindow, abilityWindow, restartWindow, settingsLayout, creditLayout;
     public SoundManager soundManager;
     // Start is called before the first frame update
     void Start()
@@ -17,6 +17,7 @@ public class PausePanel : MonoBehaviour
         leaderboardShown = false;
         abilityShown = false;
         restartShown = false;
+        isCreditLayout = false;
     }
 
     public void ShowCollection()
@@ -66,6 +67,7 @@ public class PausePanel : MonoBehaviour
         else
         {
             settingWindow.SetActive(false);
+            ShowSettingsLayout();
             SoundManager.PlaySound("ClickEcho");
             Time.timeScale = 1f;
         }
@@ -120,6 +122,30 @@ public class PausePanel : MonoBehaviour
             restartWindow.SetActive(false);
             SoundManager.PlaySound("ClickEcho");
             Time.timeScale = 1f;
+        }
+    }
+
+    public void ShowCreditLayout()
+    {
+        isCreditLayout = !isCreditLayout;
+        if (isCreditLayout)
+        {
+            creditLayout.SetActive(true);
+            settingsLayout.SetActive(false);
+            isCreditLayout = false;
+            SoundManager.PlaySound("ClickEcho");
+        }
+    }
+
+    public void ShowSettingsLayout()
+    {
+        isSettingsLayout = !isSettingsLayout;
+        if (isSettingsLayout)
+        {
+            settingsLayout.SetActive(true);
+            creditLayout.SetActive(false);
+            isSettingsLayout = false;
+            SoundManager.PlaySound("ClickEcho");
         }
     }
 }

@@ -75,7 +75,6 @@ public class Player : MonoBehaviour
     {
         scoreImage.fillAmount = score / scoreToNextLevel;
     }
-
     public void increaseScoreByWeapon()
     {
         int totalDamage = attack + abilitiesManager.EnhanceSword() + abilitiesManager.EnhanceSwordPro() + abilitiesManager.MegaStrike() + abilitiesManager.EnergUnleash();
@@ -95,7 +94,6 @@ public class Player : MonoBehaviour
             StartCoroutine("skillCooldown");
         }
     }
-
     IEnumerator skillCooldown()
     {
         yield return new WaitForSeconds(skillTimer);

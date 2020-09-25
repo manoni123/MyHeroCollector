@@ -155,7 +155,6 @@ public class MonsterManager : MonoBehaviour
         }
         goldDrop += goldBySkills;
         int sum = (monsterLevel * goldDrop) + (player.level * 2);
-        Debug.Log("mob gold is: " + sum);
         player.gold += sum;
         SoundManager.PlaySound("CoinPick");
     }

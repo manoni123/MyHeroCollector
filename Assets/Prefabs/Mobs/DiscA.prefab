@@ -122,7 +122,7 @@ MonoBehaviour:
   monsterExp: 80
   monsterDamageCooldown: 2
   chestId: 0
-  goldDrop: 190
+  goldDrop: 200
   isSpawn: 0
   isBoss: 1
   isPoisoned: 0
