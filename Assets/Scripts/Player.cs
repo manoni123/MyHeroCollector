@@ -105,6 +105,7 @@ public class Player : MonoBehaviour
         level++;
         playerExp = 0;
         goalExp = goalExp * 1.5f;
+        CloudOneServices.instance.SubmitScoreToLeaderboard(playerTotalCP);
     }
 
     public void PlayerTotalCP()
