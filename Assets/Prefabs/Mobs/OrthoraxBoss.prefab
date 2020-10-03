@@ -47,6 +47,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -117,10 +119,10 @@ MonoBehaviour:
   lootTable: {fileID: 0}
   monsterId: 30
   monsterLevel: 30
-  explosionDamage: 6
+  explosionDamage: 8
   monsterHealth: 600
   monsterExp: 260
-  monsterDamageCooldown: 2.5
+  monsterDamageCooldown: 2
   chestId: 0
   goldDrop: 320
   isSpawn: 0

@@ -27,8 +27,7 @@ public class Chest : MonoBehaviour
         currCountdownValue = countdownValue;
         while (currCountdownValue > 0)
         {
-            Debug.Log("Countdown: " + currCountdownValue);
-            yield return new WaitForSeconds(1.0f);
+            yield return new WaitForSeconds(0.75f);
             currCountdownValue--;
             if (currCountdownValue == 0)
             {

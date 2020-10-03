@@ -8,15 +8,15 @@ public class MonsterSpawn : MonoBehaviour
 {
     Chest chest;
     public int mobCounter, skipPayment, skipCount, restartPayment;
-    public bool allowSpawn, fightStart = false, skipCountIncrease = false, soundPlayed = false;
+    public bool allowSpawn, fightStart = false, skipCountIncrease = false, soundPlayed = false, showFightBtn = false;
     public Player player;
     public Text RestartPanelText;
     public PausePanel RestartPanel;
     Vector3 spawnMobPos;
     public float spawnDecendSpeed;
+    public GameObject nextMob, spawnBtn;
     public GameObject[] guiButton;
     public GameObject[] mobs;
-    GameObject nextMob;
 
     private void Start()
     {
@@ -28,6 +28,15 @@ public class MonsterSpawn : MonoBehaviour
 
     private void Update()
     {
+        if (player.StartScene)
+        {
+            if (!showFightBtn)
+            {
+                spawnBtn.SetActive(true);
+                showFightBtn = true;
+            }
+        }
+
         if (fightStart)
         {
             if (!soundPlayed)
@@ -109,6 +118,7 @@ public class MonsterSpawn : MonoBehaviour
 
     public void StartSpawning(Button btn)
     {
+      //  Time.timeScale = 1f;
         fightStart = true;
         btn.gameObject.SetActive(false); //the button activating this function
         for (int i = 0; i < guiButton.Length; i++)

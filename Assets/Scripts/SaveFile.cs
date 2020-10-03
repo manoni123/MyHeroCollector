@@ -25,6 +25,7 @@ public class SaveFile : MonoBehaviour
             player.skipForward = myFile.GetInt("PlayerSkipForward");
             player.monsterKillRecord = myFile.GetInt("MonsterKillRecord");
             player.playerTotalCP = myFile.GetInt("PlayerTotalScore");
+            player.StartScene = myFile.GetBool("StartScene");
             soundManager.masterVolume = myFile.GetFloat("Volume");
             soundManager.isMute = myFile.GetBool("VolumeSprite");
             player.CollectionItemsId = myFile.GetList<int>("PlayerCollection");
@@ -53,6 +54,7 @@ public class SaveFile : MonoBehaviour
         myFile.Add("PlayerSkipForward", player.skipForward);
         myFile.Add("MonsterKillRecord", player.monsterKillRecord);
         myFile.Add("PlayerTotalScore", player.playerTotalCP);
+        myFile.Add("StartScene", player.StartScene);
         myFile.Add("Volume", soundManager.masterVolume);
         myFile.Add("VolumeSprite", soundManager.isMute);
         for (int i = 0; i < player.CollectionItemsId.Count; i++)

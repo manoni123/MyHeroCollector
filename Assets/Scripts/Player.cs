@@ -8,7 +8,7 @@ public class Player : MonoBehaviour
     public int chestCount, level, attack, specialAttack, gold, diamond, skipForward, monsterKillRecord, playerTotalCP;
     public float skillTimer, cooldownDecrease, doubleStrike;
     public float lastRandomNumber = 0.01f;
-    public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect, usedSkill, isPoisoned, CDSkillActivated = false;
+    public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect, usedSkill, isPoisoned, CDSkillActivated = false, StartScene = false;
     public Text scoreText, goldText, diamondText, skipForwardText;
     public Image scoreImage, skillCooldownImage;
     public Chest chest;
@@ -33,7 +33,7 @@ public class Player : MonoBehaviour
         gold = 150000;
         skillReady = true;
         chest = FindObjectOfType<Chest>();
-        Debug.Log(Application.persistentDataPath);
+        Debug.Log(Application.persistentDataPath + "  " + Application.dataPath);
     }
 
     // Update is called once per frame

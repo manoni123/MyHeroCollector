@@ -12,6 +12,7 @@ public class SceneManager : MonoBehaviour
     private void Awake()
     {
         _loader = FindObjectOfType<ProgressLoader>();
+        Time.timeScale = 1;
     }
     public void LoadGame()
     {

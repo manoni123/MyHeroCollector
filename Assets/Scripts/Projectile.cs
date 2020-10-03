@@ -29,7 +29,6 @@ public class Projectile : MonoBehaviour
         transform.localScale = Vector3.Lerp(transform.localScale, targetScale, scaleSpeed * Time.deltaTime);
         if (enemyTarget)
         {
-            Debug.Log(transform.position);
             transform.position = Vector3.Lerp(transform.position, enemyPosition, positionSpeed * Time.deltaTime);
         }
     }

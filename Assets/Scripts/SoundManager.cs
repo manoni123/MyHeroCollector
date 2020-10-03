@@ -38,7 +38,7 @@ public class SoundManager : MonoBehaviour
         coinPickup = Resources.Load<AudioClip>("Audio/CoinPick");
         diamondPickup = Resources.Load<AudioClip>("Audio/DiamondPick");
         fireExplosion = Resources.Load<AudioClip>("Audio/FireExplosion");
-        swordSwing = Resources.Load<AudioClip>("Audio/SwordSwing");
+        swordSwing = Resources.Load<AudioClip>("Audio/SwordSwing") as AudioClip;
         arrow = Resources.Load<AudioClip>("Audio/Arrow");
         thunder = Resources.Load<AudioClip>("Audio/Thunder");
         silence = Resources.Load<AudioClip>("Audio/Silence");

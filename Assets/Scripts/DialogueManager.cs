@@ -9,6 +9,7 @@ public class DialogueManager : MonoBehaviour
     public PausePanel panel;
     public MonsterSpawn spawnManager;
     public Transform middlePos;
+    public Transform BottomPos;
     public GameObject[] dialogues;
     public bool showDialogue = false;
 
@@ -17,6 +18,7 @@ public class DialogueManager : MonoBehaviour
     void Update()
     {
         ShowDialogues();
+        StartSceneDialogue();
     }
 
     void ShowDialogues()
@@ -51,6 +53,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogues[2].SetActive(true);
                 dialogues[2].transform.position = middlePos.position;
+                Time.timeScale = 0f;
             }
             else
             {
@@ -64,6 +67,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogues[3].SetActive(true);
                 dialogues[3].transform.position = middlePos.position;
+                Time.timeScale = 0f;
             }
             else
             {
@@ -77,6 +81,7 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogues[4].SetActive(true);
                 dialogues[4].transform.position = middlePos.position;
+                Time.timeScale = 0f;
             }
             else
             {
@@ -90,11 +95,44 @@ public class DialogueManager : MonoBehaviour
             {
                 dialogues[5].SetActive(true);
                 dialogues[5].transform.position = middlePos.position;
+                Time.timeScale = 0f;
             }
             else
             {
                 Destroy(dialogues[5]);
             }
+        }
+    }
+
+    void StartSceneDialogue()
+    {
+        if (!player.StartScene)
+        {
+            if (!player.DialogueProgress.Contains(6))
+            {
+                dialogues[6].SetActive(true);
+            }
+            if (player.DialogueProgress.Contains(6) && !player.DialogueProgress.Contains(7))
+            {
+                dialogues[7].SetActive(true);
+                dialogues[7].transform.position = middlePos.position;
+            }
+            if (player.DialogueProgress.Contains(7) && !player.DialogueProgress.Contains(8))
+            {
+                dialogues[8].SetActive(true);
+                dialogues[8].transform.position = BottomPos.position;
+            }
+            if (player.DialogueProgress.Contains(8) && !player.DialogueProgress.Contains(9))
+            {
+                dialogues[9].SetActive(true);
+            }
+        }
+        else
+        {
+            Destroy(dialogues[6]);
+            Destroy(dialogues[7]);
+            Destroy(dialogues[8]);
+            Destroy(dialogues[9]);
         }
     }
 }

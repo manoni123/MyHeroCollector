@@ -159,7 +159,7 @@ namespace TigerForge
             storage = new Dictionary<string, object>();
 
             // Initialize the file name with the right path, name and extension.
-            this.fileName = Application.persistentDataPath + "/" + fileName + ".dat";
+            this.fileName = Application.dataPath + "/" + fileName + ".dat";
 
             Error = "";
 

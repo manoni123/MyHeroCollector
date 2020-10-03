@@ -161,11 +161,14 @@ public class MonsterManager : MonoBehaviour
 
     void DiamondDropped()
     {
-        float chance = Random.Range(0f, 100f);
-        if (chance >= 95f)
+        if (monsterLevel >= 10)
         {
-            player.diamond++;
-            SoundManager.PlaySound("DiamondPick");
+            float chance = Random.Range(0f, 100f);
+            if (chance >= 90f)
+            {
+                player.diamond++;
+                SoundManager.PlaySound("DiamondPick");
+            }
         }
     }
 
@@ -211,7 +214,7 @@ public class MonsterManager : MonoBehaviour
             float chance = Random.Range(0, 100);
             if (chance >= 90f)
             {
-                Instantiate(Effects[4], transform.position, Quaternion.identity);
+                Instantiate(Effects[4], transform.position + objectSpawn, Quaternion.identity);
                 player.score += player.abilitiesManager.LightningStrike(); ;
             }
         }
@@ -243,11 +246,8 @@ public class MonsterManager : MonoBehaviour
     {
         cameraController.isShake = true;
         cameraController.CameraShake(0.5f);
-        yield return new WaitForSeconds(0.6f);
-        cameraController.gameObject.transform.position = new Vector3(0, 0, -10);
-        cameraController.CameraShake(0.5f);
-        yield return new WaitForSeconds(0.6f);
+        yield return new WaitForSeconds(0.4f);
         cameraController.isShake = false;
-        cameraController.gameObject.transform.position = new Vector3(0, 0, -10);
+        cameraController.GetComponent<Transform>().position = new Vector3(0f, 0f, -10f);
     }
 }
