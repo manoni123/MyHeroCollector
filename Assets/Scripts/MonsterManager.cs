@@ -15,6 +15,7 @@ public class MonsterManager : MonoBehaviour
     public int chestId;
     public int goldDrop;
     public bool isSpawn = false, isBoss, isPoisoned = false, rageMode;
+    public GameObject selfTrophy;
     public GameObject[] Effects;
     public CameraController cameraController;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
@@ -176,12 +177,22 @@ public class MonsterManager : MonoBehaviour
     {
         if (lootTable != null)
         {
-            GameObject current = lootTable.LootObject();
-            if (current != null)
+            float chanceForDrop = Random.Range(0, 100);
+            if (chanceForDrop > monsterLevel * 50)
             {
-                Debug.Log("should be dropped somthing");
-                Instantiate(current.gameObject, transform.position + objectSpawn, Quaternion.identity) ;
-                chest.MainTextDisplay("You Found A : " + current.gameObject.name);
+                GameObject current = lootTable.LootObject();
+                if (current != null)
+                {
+                    Debug.Log("should be dropped somthing");
+                    Instantiate(current.gameObject, transform.position + objectSpawn, Quaternion.identity);
+                    chest.MainTextDisplay("You Found A : " + current.gameObject.name);
+                    chanceForDrop = 0;
+                }
+            } else if (chanceForDrop > 1)
+            {
+                Debug.Log("monster trophy dropped"); // should have effect
+                Instantiate(selfTrophy, transform.position + objectSpawn, Quaternion.identity);
+                chest.MainTextDisplay("You Found A : " + selfTrophy.gameObject.name + "Trophy!");
             }
         }
     }

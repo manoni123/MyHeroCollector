@@ -47,6 +47,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -127,6 +129,8 @@ MonoBehaviour:
   isBoss: 0
   isPoisoned: 0
   rageMode: 0
+  selfTrophy: {fileID: 6223310795520092933, guid: 548d9fa613204904fbcf67ee4faed36b,
+    type: 3}
   Effects:
   - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
   - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}

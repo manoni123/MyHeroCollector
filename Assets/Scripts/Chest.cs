@@ -8,7 +8,6 @@ public class Chest : MonoBehaviour
     public Text chestText;
     public Player player;
     float currCountdownValue;
-    float timeLeft = 2.0f;
 
     public void MainTextDisplay(string text)
     {
