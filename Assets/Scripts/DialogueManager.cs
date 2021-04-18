@@ -8,10 +8,9 @@ public class DialogueManager : MonoBehaviour
     public Player player;
     public PausePanel panel;
     public MonsterSpawn spawnManager;
-    public Transform middlePos;
-    public Transform BottomPos;
     public GameObject[] dialogues;
     public bool showDialogue = false;
+    public bool hideGUI;
 
     // Update is called once per frame
 
@@ -28,10 +27,12 @@ public class DialogueManager : MonoBehaviour
             if (!player.DialogueProgress.Contains(0))
             {
                 dialogues[0].SetActive(true);
+
             }
             else
             {
                 Destroy(dialogues[0]);
+
             }
         }
 
@@ -40,10 +41,12 @@ public class DialogueManager : MonoBehaviour
             if (!player.DialogueProgress.Contains(1))
             {
                 dialogues[1].SetActive(true);
+
             }
             else
             {
                 Destroy(dialogues[1]);
+
             }
         }
 
@@ -52,12 +55,13 @@ public class DialogueManager : MonoBehaviour
             if (!player.DialogueProgress.Contains(2))
             {
                 dialogues[2].SetActive(true);
-                dialogues[2].transform.position = middlePos.position;
                 Time.timeScale = 0f;
+
             }
             else
             {
                 Destroy(dialogues[2]);
+
             }
         }
 
@@ -66,12 +70,13 @@ public class DialogueManager : MonoBehaviour
             if (!player.DialogueProgress.Contains(3))
             {
                 dialogues[3].SetActive(true);
-                dialogues[3].transform.position = middlePos.position;
                 Time.timeScale = 0f;
+
             }
             else
             {
                 Destroy(dialogues[3]);
+
             }
         }
 
@@ -80,12 +85,13 @@ public class DialogueManager : MonoBehaviour
             if (!player.DialogueProgress.Contains(4))
             {
                 dialogues[4].SetActive(true);
-                dialogues[4].transform.position = middlePos.position;
                 Time.timeScale = 0f;
+
             }
             else
             {
                 Destroy(dialogues[4]);
+
             }
         }
 
@@ -94,12 +100,13 @@ public class DialogueManager : MonoBehaviour
             if (!player.DialogueProgress.Contains(5))
             {
                 dialogues[5].SetActive(true);
-                dialogues[5].transform.position = middlePos.position;
                 Time.timeScale = 0f;
+
             }
             else
             {
                 Destroy(dialogues[5]);
+
             }
         }
     }
@@ -108,6 +115,7 @@ public class DialogueManager : MonoBehaviour
     {
         if (!player.StartScene)
         {
+            Time.timeScale = 0;
             if (!player.DialogueProgress.Contains(6))
             {
                 dialogues[6].SetActive(true);
@@ -115,12 +123,10 @@ public class DialogueManager : MonoBehaviour
             if (player.DialogueProgress.Contains(6) && !player.DialogueProgress.Contains(7))
             {
                 dialogues[7].SetActive(true);
-                dialogues[7].transform.position = middlePos.position;
             }
             if (player.DialogueProgress.Contains(7) && !player.DialogueProgress.Contains(8))
             {
                 dialogues[8].SetActive(true);
-                dialogues[8].transform.position = BottomPos.position;
             }
             if (player.DialogueProgress.Contains(8) && !player.DialogueProgress.Contains(9))
             {

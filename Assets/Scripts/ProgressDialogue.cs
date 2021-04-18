@@ -25,6 +25,7 @@ public class ProgressDialogue : MonoBehaviour
     public void SelfClose()
     {
         player.DialogueProgress.Add(id);
+        Time.timeScale = 1f;
         if (isStartScene)
         {
             gameObject.SetActive(false);
@@ -34,7 +35,6 @@ public class ProgressDialogue : MonoBehaviour
             player.StartScene = true;
         }
         Destroy(gameObject);
-        Time.timeScale = 1f;
     }
 
 }

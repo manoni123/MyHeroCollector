@@ -114,12 +114,12 @@ public class PausePanel : MonoBehaviour
         {
             restartWindow.SetActive(true);
             SoundManager.PlaySound("ClickEcho");
-            restartWindow.GetComponent<RestartManager>().RestartText.text = restartWindow.GetComponent<RestartManager>().originText;
             Time.timeScale = 0f;
         }
         else
         {
             restartWindow.SetActive(false);
+            restartWindow.GetComponent<RestartManager>().defaultText.text = restartWindow.GetComponent<RestartManager>().defaultText.text;
             SoundManager.PlaySound("ClickEcho");
             Time.timeScale = 1f;
         }

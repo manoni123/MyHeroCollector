@@ -14,7 +14,9 @@ public class SaveFile : MonoBehaviour
     private void Awake()
     {
         EasyFileSave myFile = new EasyFileSave();
-        
+        Debug.Log("persistant save location "  + Application.persistentDataPath);
+        Debug.Log("data save location " + Application.dataPath);
+
         if (myFile.Load())
         {
             player.level = myFile.GetInt("PlayerLevel");

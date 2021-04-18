@@ -6,7 +6,7 @@ public class effect : MonoBehaviour
 {
     public float effectDelayDestory;
     public string effectAudio;
-    public bool towrdsEnemy;
+    public bool towrdsEnemy, isFirework;
     private void Start()
     {
         StartCoroutine("clipDelay");
@@ -18,5 +18,4 @@ public class effect : MonoBehaviour
         yield return new WaitForSeconds(effectDelayDestory);
         Destroy(gameObject);
     }
-
 }

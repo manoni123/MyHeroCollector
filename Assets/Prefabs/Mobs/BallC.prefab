@@ -141,4 +141,8 @@ MonoBehaviour:
   - {fileID: 215306438011720258, guid: b0921930e59f31347b44256d5d17da8f, type: 3}
   - {fileID: 378496825530896092, guid: f987c04261ce5f243ac478a405ab4670, type: 3}
   - {fileID: 0}
+  droppedCoin: {fileID: 6939136168027589322, guid: 60df3b60796938448882dc2b3f133c34,
+    type: 3}
+  droppedDiamond: {fileID: 3909930628309966198, guid: b5e157ec8012d044284480867a6c08b1,
+    type: 3}
   cameraController: {fileID: 0}

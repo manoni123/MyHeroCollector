@@ -1,0 +1,35 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4cd280edfec1a5b4e8a1e865236dbec3, type: 3}
+  m_Name: DropsLootTable
+  m_EditorClassIdentifier: 
+  loots:
+  - thisloot: {fileID: 3679509169802942431, guid: 48730248cd8878442b7dd3251044bf1b,
+      type: 3}
+    lootChance: 80
+    abilitiesManager: {fileID: 0}
+  - thisloot: {fileID: 6343527913319877353, guid: bc1e526474de67c47ba7b12bfca6f7b9,
+      type: 3}
+    lootChance: 80
+    abilitiesManager: {fileID: 0}
+  - thisloot: {fileID: 2555888684559600056, guid: cd59a525fe6e1764cb8cb73eb7bad372,
+      type: 3}
+    lootChance: 80
+    abilitiesManager: {fileID: 0}
+  - thisloot: {fileID: 6432987610177380452, guid: d412a44d41a3646488263484c6f183f7,
+      type: 3}
+    lootChance: 80
+    abilitiesManager: {fileID: 0}
+  - thisloot: {fileID: 8194702502112776111, guid: 7b5273306e8d81343868a0a79981615b,
+      type: 3}
+    lootChance: 20
+    abilitiesManager: {fileID: 0}

@@ -46,6 +46,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -96,3 +98,12 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   itemID: 513
   Player: {fileID: 0}
+  isTrohpy: 0
+  isFirework: 0
+  routes:
+  - {fileID: 0}
+  speedModifier: 0
+  destroyAfterTime: 4
+  dropChance: 5
+  Effects: []
+  routeToGo: 0

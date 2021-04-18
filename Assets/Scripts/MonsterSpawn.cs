@@ -22,18 +22,25 @@ public class MonsterSpawn : MonoBehaviour
     {
         chest = GameObject.Find("PlayerUI").GetComponent<Chest>();
         player = FindObjectOfType<Player>();
-        restartPayment = 100;
-        skipPayment = 200;
+        skipPayment = 50;
+        for (int i = 0; i < guiButton.Length; i++)
+        {
+            guiButton[i].SetActive(false);
+        }
     }
 
     private void Update()
     {
+        restartPayment = mobCounter * 10; ;
+        GamePaused();
+
         if (player.StartScene)
         {
             if (!showFightBtn)
             {
                 spawnBtn.SetActive(true);
                 showFightBtn = true;
+                Time.timeScale = 0;
             }
         }
 
@@ -42,6 +49,7 @@ public class MonsterSpawn : MonoBehaviour
             if (!soundPlayed)
             {
                 SoundManager.PlaySound("Adventure");
+                Time.timeScale = 1;
                 soundPlayed = true;
             }
             if (transform.childCount == 0)
@@ -88,31 +96,29 @@ public class MonsterSpawn : MonoBehaviour
     {
         if (skipCount >= 5)
         {
-            if (player.gold >= skipPayment)
+            Debug.Log("gold to skip : " + skipPayment * mobCounter);
+            int remainingCount = mobs.Length - mobCounter;
+            if (remainingCount > skipCount)
             {
-                int remainingCount = mobs.Length - mobCounter;
-                if (remainingCount > skipCount)
-                {
-                    Destroy(Spawner.transform.GetChild(0).gameObject);
-                    nextMob = Instantiate(mobs[mobCounter + (skipCount - 1)], spawnMobPos, Quaternion.identity);
-                    nextMob.name = "currrentEnemy_" + mobCounter;
-                    nextMob.transform.SetParent(Spawner.transform);
-                    allowSpawn = false;
-                    nextMob.GetComponent<MonsterManager>().isSpawn = true;
-                    mobCounter += skipCount;
-                    player.score = 0;
-                    player.gold -= skipPayment;
-                    SoundManager.PlaySound("LevelUp");
-                }
-                else
-                {
-                    chest.MainTextDisplay("You cannot skip level anymore");
-                }
+                Destroy(Spawner.transform.GetChild(0).gameObject);
+                nextMob = Instantiate(mobs[mobCounter + (skipCount - 1)], spawnMobPos, Quaternion.identity);
+                nextMob.name = "currrentEnemy_" + mobCounter;
+                nextMob.transform.SetParent(Spawner.transform);
+                allowSpawn = false;
+                nextMob.GetComponent<MonsterManager>().isSpawn = true;
+                mobCounter += skipCount;
+                player.score = 0;
+                player.gold -= skipPayment;
+                SoundManager.PlaySound("LevelUp");
             }
             else
             {
-                chest.MainTextDisplay("You do not have enough gold");
+                chest.MainTextDisplay("You cannot skip level anymore");
             }
+        }
+        else
+        {
+            chest.MainTextDisplay("You do not have required skill");
         }
     }
 
@@ -121,14 +127,10 @@ public class MonsterSpawn : MonoBehaviour
       //  Time.timeScale = 1f;
         fightStart = true;
         btn.gameObject.SetActive(false); //the button activating this function
-        for (int i = 0; i < guiButton.Length; i++)
-        {
-            guiButton[i].gameObject.SetActive(true);
-        }
     }
     public void RestartMonsters(GameObject Spawner)
     {
-        if (player.gold >= restartPayment)
+        if (player.gold >= restartPayment && restartPayment != 0)
         {
             Destroy(Spawner.transform.GetChild(0).gameObject);
             nextMob = Instantiate(mobs[0], transform.position, Quaternion.identity);
@@ -145,6 +147,24 @@ public class MonsterSpawn : MonoBehaviour
         else
         {
             RestartPanelText.text = "You do not have enough gold... how shame :O";
+        }
+    }
+
+    void GamePaused()
+    {
+        if (Time.timeScale == 0)
+        {
+            for (int i = 0; i < guiButton.Length; i++)
+            {
+                guiButton[i].SetActive(false);
+            }
+        }
+        else
+        {
+            for (int i = 0; i < guiButton.Length; i++)
+            {
+                guiButton[i].SetActive(true);
+            }
         }
     }
 }

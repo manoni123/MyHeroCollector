@@ -47,6 +47,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -127,6 +129,8 @@ MonoBehaviour:
   isBoss: 1
   isPoisoned: 0
   rageMode: 0
+  selfTrophy: {fileID: 4938547077696518134, guid: c8658237495de4b47b6b5ea828bc464d,
+    type: 3}
   Effects:
   - {fileID: 6471704456072142651, guid: e03c135056570e14fa9dc5ad32a438ac, type: 3}
   - {fileID: 6463133092379062912, guid: 84f23362c3d1b9d4884b2b4abe95dceb, type: 3}
@@ -138,4 +142,8 @@ MonoBehaviour:
   - {fileID: 215306438011720258, guid: b0921930e59f31347b44256d5d17da8f, type: 3}
   - {fileID: 378496825530896092, guid: f987c04261ce5f243ac478a405ab4670, type: 3}
   - {fileID: 0}
+  droppedCoin: {fileID: 6939136168027589322, guid: 60df3b60796938448882dc2b3f133c34,
+    type: 3}
+  droppedDiamond: {fileID: 3909930628309966198, guid: b5e157ec8012d044284480867a6c08b1,
+    type: 3}
   cameraController: {fileID: 0}

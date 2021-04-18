@@ -17,6 +17,7 @@ public class MonsterManager : MonoBehaviour
     public bool isSpawn = false, isBoss, isPoisoned = false, rageMode;
     public GameObject selfTrophy;
     public GameObject[] Effects;
+    public GameObject droppedCoin, droppedDiamond;
     public CameraController cameraController;
     Vector3 objectSpawn = new Vector3(0, 2.3f, 0);
     /// <summary>Effects explain
@@ -29,7 +30,7 @@ public class MonsterManager : MonoBehaviour
     /// #6 = Boss Rage Mode Explosion
     /// #7 = spawn normal
     /// #8 = skill sent twords
-    /// #9 = 
+    /// #9 = firework
     /// </summary>
     private void Start()
     {
@@ -110,9 +111,9 @@ public class MonsterManager : MonoBehaviour
         //check for boss rage mode
         if (isBoss && player.score >= monsterHealth / 2 && !rageMode)
         {
+            rageMode = true;
             StartCoroutine("BossRageShakeScreen");
             InvokeRepeating("BossRageMode", 1f, 1f);
-            rageMode = true;
         }
     }
 
@@ -154,19 +155,21 @@ public class MonsterManager : MonoBehaviour
         {
             goldBySkills = goldDrop * player.abilitiesManager.TreasurePool() / 100;
         }
-        goldDrop += goldBySkills;
-        int sum = (monsterLevel * goldDrop) + (player.level * 2);
-        player.gold += sum;
+        goldDrop += (goldBySkills * monsterLevel) + (player.level * 2);
+        player.gold += goldDrop;
         SoundManager.PlaySound("CoinPick");
+
+        Instantiate(droppedCoin, transform.position, Quaternion.identity);
     }
 
     void DiamondDropped()
     {
-        if (monsterLevel >= 10)
+        if (monsterLevel >= 1)
         {
             float chance = Random.Range(0f, 100f);
             if (chance >= 90f)
             {
+                Instantiate(droppedDiamond, transform.position, Quaternion.identity);
                 player.diamond++;
                 SoundManager.PlaySound("DiamondPick");
             }
@@ -178,7 +181,14 @@ public class MonsterManager : MonoBehaviour
         if (lootTable != null)
         {
             float chanceForDrop = Random.Range(0, 100);
-            if (chanceForDrop > monsterLevel * 50)
+            if (((int)Mathf.Round(chanceForDrop)) >= 95 - (player.abilitiesManager.DropChance() + player.abilitiesManager.DropChanceBetter()))
+            {
+                Debug.Log("monster trophy dropped"); // should have effect
+                Instantiate(selfTrophy, transform.position + objectSpawn, Quaternion.identity);
+                chest.TrophyTextDisplay("You Found A Trophy!");
+                player.gold += 100 * player.level;
+            }
+            else
             {
                 GameObject current = lootTable.LootObject();
                 if (current != null)
@@ -186,13 +196,7 @@ public class MonsterManager : MonoBehaviour
                     Debug.Log("should be dropped somthing");
                     Instantiate(current.gameObject, transform.position + objectSpawn, Quaternion.identity);
                     chest.MainTextDisplay("You Found A : " + current.gameObject.name);
-                    chanceForDrop = 0;
                 }
-            } else if (chanceForDrop > 1)
-            {
-                Debug.Log("monster trophy dropped"); // should have effect
-                Instantiate(selfTrophy, transform.position + objectSpawn, Quaternion.identity);
-                chest.MainTextDisplay("You Found A : " + selfTrophy.gameObject.name + "Trophy!");
             }
         }
     }
@@ -205,7 +209,7 @@ public class MonsterManager : MonoBehaviour
                 float chance = Random.Range(0, 100);
                 if (chance >= 75f)
                 {
-                    Instantiate(Effects[3], transform.position, Quaternion.identity);
+      //              Instantiate(Effects[3], transform.position, Quaternion.identity);
                     InvokeRepeating("PoisonSkillDamage", 2f, 1f);
                     isPoisoned = true;
                 }
@@ -216,6 +220,7 @@ public class MonsterManager : MonoBehaviour
     void PoisonSkillDamage()
     {
         player.score += player.abilitiesManager.PoisonBlade();
+        Instantiate(Effects[3], transform.position, Quaternion.identity);
     }
 
     void LightningSkill()
@@ -253,6 +258,7 @@ public class MonsterManager : MonoBehaviour
         player.score -= explosionDamage;
     }
 
+
     IEnumerator BossRageShakeScreen()
     {
         cameraController.isShake = true;
@@ -261,4 +267,6 @@ public class MonsterManager : MonoBehaviour
         cameraController.isShake = false;
         cameraController.GetComponent<Transform>().position = new Vector3(0f, 0f, -10f);
     }
+
+
 }

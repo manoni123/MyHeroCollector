@@ -9,8 +9,8 @@ public class Player : MonoBehaviour
     public float skillTimer, cooldownDecrease, doubleStrike;
     public float lastRandomNumber = 0.01f;
     public bool skillReady, allowReset = false, normalAttackEffect, specialAttackEffect, usedSkill, isPoisoned, CDSkillActivated = false, StartScene = false;
-    public Text scoreText, goldText, diamondText, skipForwardText;
-    public Image scoreImage, skillCooldownImage;
+    public Text scoreText, goldText, diamondText, skipForwardText, playerExpText, levelText;
+    public Image scoreImage, skillCooldownImage, expProrgessImage;
     public Chest chest;
     public AbilitiesManager abilitiesManager;
 
@@ -28,9 +28,6 @@ public class Player : MonoBehaviour
     {
         attack = 1;
         specialAttack = 5;
-        level = 1;
-        diamond = 500;
-        gold = 150000;
         skillReady = true;
         chest = FindObjectOfType<Chest>();
         Debug.Log(Application.persistentDataPath + "  " + Application.dataPath);
@@ -39,6 +36,12 @@ public class Player : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        int goalExpConvert = (int)goalExp;
+        goldText.text = gold.ToString();
+        diamondText.text = diamond.ToString();
+        playerExpText.text = playerExp.ToString() + " / " + goalExpConvert.ToString();
+        levelText.text = "Lv." + level.ToString();
+
         if (SkillItemsId.Contains(10) && !CDSkillActivated)
         {
             skillTimer -= skillTimer * (abilitiesManager.TimeBurst() / 100);
@@ -50,14 +53,12 @@ public class Player : MonoBehaviour
             skillCooldownImage.fillAmount -= 1.0f / skillTimer * Time.deltaTime;
         }
 
-        goldText.text = gold.ToString();
-        diamondText.text = diamond.ToString();
-
         if (playerExp >= goalExp)
         {
             LevelUp();
         }
 
+        PlayerExpProgress();
         ScoreBarReset();
         preventMinusScore();
         PlayerTotalCP();
@@ -75,6 +76,12 @@ public class Player : MonoBehaviour
     {
         scoreImage.fillAmount = score / scoreToNextLevel;
     }
+
+    void PlayerExpProgress()
+    {
+        expProrgessImage.fillAmount = playerExp / goalExp;
+    }
+
     public void increaseScoreByWeapon()
     {
         int totalDamage = attack + abilitiesManager.EnhanceSword() + abilitiesManager.EnhanceSwordPro() + abilitiesManager.MegaStrike() + abilitiesManager.EnergUnleash();

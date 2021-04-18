@@ -174,12 +174,12 @@ public class AbilitiesManager : MonoBehaviour
         }
         return 0;
     }
-    public int DropChance()//Increase Chance for rare items
+    public float DropChance()//Increase Chance for rare items
     {
         if (player.SkillItemsId.Contains(13))
         {
-            int skillDamage = 5;
-            return skillDamage;
+            float dropIncrease = 5;
+            return dropIncrease;
         }
         return 0;
     }
@@ -192,12 +192,12 @@ public class AbilitiesManager : MonoBehaviour
         }
         return 0;
     }
-    public int DropChanceBetter()//Increase Chance for epic items
+    public float DropChanceBetter()//Increase Chance for epic items
     {
         if (player.SkillItemsId.Contains(15))
         {
-            int skillDamage = 5;
-            return skillDamage;
+            float dropIncrease = 5;
+            return dropIncrease;
         }
         return 0;
     }

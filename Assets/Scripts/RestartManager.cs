@@ -6,15 +6,14 @@ using UnityEngine.UI;
 public class RestartManager : MonoBehaviour
 {
     public Player player;
-    public Text RestartText;
-    public string originText;
-    public bool startText;
-    public int requiredPayment;
+    public Text defaultText;
+    public MonsterSpawn spawnManager;
+    public string requiredPayment;
+    public bool hasEnoughGold;
     // Start is called before the first frame update
-    void Start()
+
+    public void Update()
     {
-        requiredPayment = 100;
-        originText = "Are you sure you want to return to monster level 1 ? cost of : " + requiredPayment + " Gold";
-        RestartText.text = originText;
+        defaultText.text = "Are you sure you want to return to monster level 1 ? The cost is : " + spawnManager.restartPayment + " Gold.";
     }
 }

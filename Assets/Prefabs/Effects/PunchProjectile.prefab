@@ -46,6 +46,8 @@ SpriteRenderer:
   m_MotionVectors: 1
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 0
+  m_RayTraceProcedural: 0
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
@@ -96,7 +98,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   audioName: 
   scaleSpeed: 1
-  positionSpeed: 3
+  positionSpeed: 7
   destroyAfterSeconds: 0.5
   targetScale: {x: 0, y: 0, z: 0}
   enemyPosition: {x: 0, y: -1, z: 0}
