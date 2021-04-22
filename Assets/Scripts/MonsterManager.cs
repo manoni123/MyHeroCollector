@@ -157,8 +157,8 @@ public class MonsterManager : MonoBehaviour
         }
         goldDrop += (goldBySkills * monsterLevel) + (player.level * 2);
         player.gold += goldDrop;
+        player.SaveWhenUpdate();
         SoundManager.PlaySound("CoinPick");
-
         Instantiate(droppedCoin, transform.position, Quaternion.identity);
     }
 
@@ -171,6 +171,7 @@ public class MonsterManager : MonoBehaviour
             {
                 Instantiate(droppedDiamond, transform.position, Quaternion.identity);
                 player.diamond++;
+                player.SaveWhenUpdate();
                 SoundManager.PlaySound("DiamondPick");
             }
         }

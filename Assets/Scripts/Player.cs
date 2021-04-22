@@ -118,5 +118,13 @@ public class Player : MonoBehaviour
     public void PlayerTotalCP()
     {
         playerTotalCP = (SkillItemsId.Count * 3) + (CollectionItemsId.Count + monsterKillRecord) * level;
+        CloudOnce.Leaderboards.HighScore.SubmitScore(playerTotalCP);
+    }
+
+    public void SaveWhenUpdate()
+    {
+        CloudOnce.CloudVariables.PlayerGold = gold;
+        CloudOnce.CloudVariables.PlayerDiamond = diamond;
+        CloudOnce.Cloud.Storage.Save();
     }
 }

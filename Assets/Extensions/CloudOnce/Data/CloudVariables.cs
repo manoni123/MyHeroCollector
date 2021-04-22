@@ -13,5 +13,20 @@ namespace CloudOnce
     /// </summary>
     public static class CloudVariables
     {
+        private static readonly CloudInt s_playerGold = new CloudInt("PlayerGold", PersistenceType.Latest, 0);
+
+        public static int PlayerGold
+        {
+            get { return s_playerGold.Value; }
+            set { s_playerGold.Value = value; }
+        }
+
+        private static readonly CloudInt s_playerDiamond = new CloudInt("PlayerDiamond", PersistenceType.Latest, 0);
+
+        public static int PlayerDiamond
+        {
+            get { return s_playerDiamond.Value; }
+            set { s_playerDiamond.Value = value; }
+        }
     }
 }

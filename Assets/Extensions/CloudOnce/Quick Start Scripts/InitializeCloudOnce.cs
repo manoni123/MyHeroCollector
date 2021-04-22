@@ -26,5 +26,10 @@ namespace CloudOnce.QuickStart
         {
             Cloud.Initialize(cloudSaveEnabled, autoSignIn, autoCloudLoad);
         }
+
+        private void Update()
+        {
+            Cloud.Storage.Load();
+        }
     }
 }

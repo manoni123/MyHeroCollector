@@ -17,6 +17,8 @@ public class SaveFile : MonoBehaviour
         Debug.Log("persistant save location "  + Application.persistentDataPath);
         Debug.Log("data save location " + Application.dataPath);
 
+        CloudOnce.Cloud.Storage.Load();
+
         if (myFile.Load())
         {
             player.level = myFile.GetInt("PlayerLevel");
@@ -36,6 +38,8 @@ public class SaveFile : MonoBehaviour
         }
 
         myFile.Dispose();
+        
+        // Cloud Save
     }
 
     private void OnApplicationQuit()

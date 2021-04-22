@@ -4,13 +4,28 @@
 		{
 			"InternalID":"HighScore",
 			"AppleID":"",
-			"GoogleID":"CgkIhMmsypgOEAIQAA"
+			"GoogleID":"CgkIiqLo7LoOEAIQAA"
 		}
 	],
-	"CloudVariables":[],
+	"CloudVariables":[
+		{
+			"Key":"PlayerGold",
+			"Type":"0",
+			"DefaultValue":"0",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		},
+		{
+			"Key":"PlayerDiamond",
+			"Type":"0",
+			"DefaultValue":"0",
+			"PersistenceType":"0",
+			"AllowNegative":false
+		}
+	],
 	"AppleSupported":false,
 	"GoogleSupported":true,
-	"GoogleAppID":"487634707588",
+	"GoogleAppID":"496833794314",
 	"GoogleSetupRun":true,
 	"DebugModeEnabled":false,
 	"Version":"2.7.1",
